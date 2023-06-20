@@ -22,8 +22,10 @@ const Header = () => {
         <div className={classes.header}>
             {/* Logo Side */}
             <div className={classes.logo}>
-                <Image src={Logo} alt="Logo" width={50} height={50} />
-                <span>Fudo</span>
+                <Link href='/'>
+                    <Image src={Logo} alt="Logo" width={150} height={50} />
+                </Link>
+                {/* <span>Fudo</span> */}
             </div>
 
             {/* Menu Side */}

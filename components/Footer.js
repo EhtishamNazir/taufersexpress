@@ -15,8 +15,8 @@ const Footer = () => {
                 <UilInstagram size={45} />
             </div>
             <div className={classes.logo}>
-                <Image src={Logo} alt="Logo" width={50} height={50} />
-                <span>Fudo</span>
+                <Image src={Logo} alt="Logo" width={150} height={50} />
+                {/* <span>Fudo</span> */}
             </div>
         </div>
     );

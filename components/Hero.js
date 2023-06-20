@@ -36,7 +36,7 @@ const Hero = () => {
                 </div>
                 <div className={classes.pizza}>
                     <div>
-                        <Image src={Pizza1} objectFit="cover" layout="intrinsic" />
+                        <Image src={Pizza1} alt="" objectFit="cover" layout="intrinsic" />
                     </div>
                     <div className={classes.details}>
                         <span>Italian Pizza</span>
