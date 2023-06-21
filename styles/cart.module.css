@@ -67,3 +67,42 @@
     color: var(--themeRed);
     border: 2px solid var(--themeRed);
 }
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem 1rem;
+    }
+
+    .details {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .details::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    .cart {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .details {
+        width: 90%;
+        margin: auto;
+    }
+
+    .cart {
+        width: 90%;
+        margin: auto;
+    }
+}

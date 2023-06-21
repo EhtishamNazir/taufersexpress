@@ -92,3 +92,14 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .pizza {
+        width: 48%;
+        margin-bottom: 1.5rem;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+}

@@ -69,3 +69,69 @@
     padding: 0.5rem;
     font-size: 0.8rem;
 }
+
+@media screen and (max-width: 480px) {
+    .details {
+        width: 90%;
+        margin: auto;
+    }
+
+    .statusContainer {
+        width: 95%;
+        gap: 0;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .status {
+        width: 23%;
+        gap: 0;
+    }
+
+    .status>span {
+        font-size: 0.8rem;
+        margin: 2rem 0 0 0;
+    }
+
+    .spinner {
+        left: -0.6rem;
+        top: -1.5rem;
+        width: 4rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .details {
+        width: 70%;
+    }
+
+    .statusContainer {
+        width: 100%;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .status {
+        width: 23%;
+    }
+
+    .spinner {
+        left: 2.5rem;
+        top: -1.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        gap: 6rem;
+    }
+
+    .details {
+        width: 50%;
+    }
+
+    .statusContainer {
+        gap: 12rem;
+    }
+}

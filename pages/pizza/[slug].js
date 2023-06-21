@@ -44,9 +44,9 @@ export default function Pizza({ pizza }) {
                     <div className={classes.size}>
                         <span>Size:</span>
                         <div className={classes.sizeVariants}>
-                            <div onClick={() => setSize(0)} className={size === 0 ? classes.selected : ''}>Small</div>
-                            <div onClick={() => setSize(1)} className={size === 1 ? classes.selected : ''}>Medium</div>
-                            <div onClick={() => setSize(2)} className={size === 2 ? classes.selected : ''}>Large</div>
+                            <div onClick={() => setSize(0)} className={size === 0 ? classes.selected : ''}>S<span>mall</span></div>
+                            <div onClick={() => setSize(1)} className={size === 1 ? classes.selected : ''}>M<span>edium</span></div>
+                            <div onClick={() => setSize(2)} className={size === 2 ? classes.selected : ''}>L<span>arge</span></div>
                         </div>
                     </div>
                     {/* Quantity Counter */}
