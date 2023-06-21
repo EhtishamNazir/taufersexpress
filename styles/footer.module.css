@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(1deg, rgba(255, 237, 237, 0.85) 0%, rgba(255, 255, 255, 0) 14rem);
-    padding-bottom: 30px;
+    padding-bottom: 2rem;
 }
 
 .container>span {
@@ -33,4 +33,25 @@
 
 .social>* {
     fill: var(--themeRed);
+}
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin-top: 2rem;
+    }
+
+    .social {
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .container {
+        margin-top: 3rem;
+    }
+
+    .social {
+        gap: 2rem;
+    }
 }

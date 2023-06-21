@@ -47,3 +47,48 @@
     width: 20rem;
     text-align: center;
 }
+
+@media screen and (max-width: 480px) {
+    .heading {
+        margin-top: 2rem;
+    }
+
+    .heading>:nth-child(2),
+    .heading>:nth-child(3) {
+        font-size: 1.5rem;
+    }
+
+    .services {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .feature {
+        width: 100%;
+    }
+
+    .feature>:nth-child(3) {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .heading {
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    .services {
+        width: 100%;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .feature {
+        width: 31%;
+    }
+
+    .feature>:nth-child(3) {
+        width: auto;
+    }
+}

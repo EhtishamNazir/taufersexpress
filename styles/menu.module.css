@@ -56,3 +56,39 @@
 .pizza:hover {
     cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+    .heading>:nth-child(1) {
+        margin-bottom: 1rem;
+    }
+
+    .heading>:nth-child(2),
+    .heading>:nth-child(3) {
+        font-size: 1.5rem;
+    }
+
+    .pizza {
+        width: 100%;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .menu {
+        width: 100%;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .pizza {
+        width: 48%;
+        margin-bottom: 1.5rem;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+}

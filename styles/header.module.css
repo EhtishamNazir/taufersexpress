@@ -59,3 +59,13 @@
     align-items: center;
     right: -0.5rem;
 }
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .menu {
+        display: none;
+    }
+}
