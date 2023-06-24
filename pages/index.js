@@ -10,7 +10,7 @@ import { client } from "../lib/client";
 export default function Home({ pizzas }) {
 
   if (!pizzas) {
-    <h1>Please check your internet connection</h1>
+    return <h1>Please check your internet connection</h1>
   }
   return (
     <Layout>

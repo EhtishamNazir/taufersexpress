@@ -31,8 +31,8 @@ const Header = () => {
             {/* Menu Side */}
             <div className={classes.menu}>
                 <li><Link href="/">Home</Link></li>
-                <li><Link href="/">Menu</Link></li>
-                <li><Link href="/">Contact</Link></li>
+                <li><Link href="/menu">Menu</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
             </div>
 
             {/* Right Side */}

@@ -102,7 +102,7 @@ export default function Cart() {
                         </div>
                         <div>
                             <span>Total:</span>
-                            <span><span style={{ color: 'var(--themeRed)' }}>$</span>{total()}</span>
+                            <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{total()}</span>
                         </div>
                     </div>
                     {!order && cartData.pizzas.length > 0 ? (

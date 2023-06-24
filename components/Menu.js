@@ -17,7 +17,7 @@ export default function Menu(props) {
             {/* Pizzas */}
             <div className={classes.menu}>
                 {
-                    pizzas.map((pizza, id) => {
+                    pizzas.slice(0, 6).map((pizza, id) => {
                         const src = urlFor(pizza.image).url();
                         return (
                             <div className={classes.pizza} key={id}>
@@ -27,7 +27,7 @@ export default function Menu(props) {
                                     </div>
                                 </Link>
                                 <span>{pizza.name}</span>
-                                <span><span style={{ color: 'var(--themeRed)' }}>$</span>{pizza.price[1]}</span>
+                                <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
                             </div>
                         )
                     })

@@ -40,7 +40,7 @@ export default function Pizza({ pizza }) {
                 <div className={classes.right}>
                     <span>{pizza.name}</span>
                     <span>{pizza.details}</span>
-                    <span><span style={{ color: 'var(--themeRed)' }}>$</span>{pizza.price[size]}</span>
+                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[size]}</span>
                     <div className={classes.size}>
                         <span>Size:</span>
                         <div className={classes.sizeVariants}>

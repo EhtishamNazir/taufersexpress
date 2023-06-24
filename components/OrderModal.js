@@ -61,7 +61,7 @@ export default function OrderModal({ opened, setOpened, paymentMethod }) {
                     <input type='text' name='phone' placeholder='Phone Number' onChange={handlePhoneInput} required />
                     <textarea name='address' cols={8} rows={3} placeholder='Address' onChange={handleAddressInput} required></textarea>
                     <span>
-                        You will pay <span>${total}</span> on delivery
+                        You will pay <span>€ {total}</span> on delivery
                     </span>
                     <button type='submit' className='btn'>Place Order</button>
                 </form>
