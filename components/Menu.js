@@ -17,7 +17,7 @@ export default function Menu(props) {
             {/* Pizzas */}
             <div className={classes.menu}>
                 {
-                    pizzas.map((pizza, id) => {
+                    pizzas.slice(0, 6).map((pizza, id) => {
                         const src = urlFor(pizza.image).url();
                         return (
                             <div className={classes.pizza} key={id}>

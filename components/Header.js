@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useStore } from "../store/store";
 import classes from '../styles/header.module.css';
 import Logo from '../assets/Logo.png';
-import { UilShoppingBag, UilReceipt } from '@iconscout/react-unicons';
+import { UilShoppingBag, UilReceipt, UilBars } from '@iconscout/react-unicons';
 
 
 const Header = () => {
@@ -56,6 +56,10 @@ const Header = () => {
                     )
                 }
             </div>
+            <div className={classes.toggleBtn}>
+                <UilBars size={35} />
+            </div>
+
         </div>
     );
 }

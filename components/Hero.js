@@ -5,8 +5,20 @@ import Cherry from '../assets/Cherry.png';
 import HeroImage from '../assets/HeroImage.png';
 import { UilPhone } from '@iconscout/react-unicons';
 import Pizza1 from '../assets/p1.jpg';
+import Link from "next/link";
 
 const Hero = () => {
+
+    const phoneNumber = '+393248909003'; // Replace with your desired phone number
+    const message = 'Hello, I want to connect with you!'; // Replace with your desired message
+
+    // Encode the phone number and message for the URL
+    const encodedPhoneNumber = encodeURIComponent(phoneNumber);
+    const encodedMessage = encodeURIComponent(message);
+
+    // Generate the WhatsApp link
+    const whatsappLink = `https://wa.me/${encodedPhoneNumber}?text=${encodedMessage}`;
+
     return (
         <div className={classes.container}>
             {/* Left Side */}
@@ -30,10 +42,12 @@ const Hero = () => {
                 <div className={classes.imageContainer}>
                     <Image src={HeroImage} alt="Hero Image" layout="intrinsic" />
                 </div>
-                <div className={classes.contactUs}>
-                    <span>Contact Us</span>
-                    <div><UilPhone color="white" /></div>
-                </div>
+                <Link href={whatsappLink}>
+                    <div className={classes.contactUs}>
+                        <span>Contact Us</span>
+                        <div><UilPhone color="white" /></div>
+                    </div>
+                </Link>
                 <div className={classes.pizza}>
                     <div>
                         <Image src={Pizza1} alt="" objectFit="cover" layout="intrinsic" />

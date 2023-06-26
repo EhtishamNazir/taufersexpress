@@ -60,6 +60,12 @@
     right: -0.5rem;
 }
 
+.toggleBtn {
+    display: none;
+    margin-top: 0.7rem;
+    margin-left: 1rem;
+}
+
 @media screen and (max-width: 480px) {
     .header {
         padding: 1rem;
@@ -67,5 +73,9 @@
 
     .menu {
         display: none;
+    }
+
+    .toggleBtn {
+        display: block;
     }
 }
