@@ -62,17 +62,42 @@
 
 .toggleBtn {
     display: none;
-    margin-top: 0.7rem;
+    margin-top: 0.5rem;
     margin-left: 1rem;
+}
+
+.mobileMenu {
+    width: 100%;
+    display: none;
+    transition: display 0.3s ease-in-out;
+}
+
+.mobileMenu ul {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.mobileMenu>ul>li {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 480px) {
     .header {
         padding: 1rem;
+        flex-wrap: wrap;
     }
 
     .menu {
         display: none;
+    }
+
+    .mobileMenu {
+        display: block;
     }
 
     .toggleBtn {

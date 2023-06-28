@@ -10,14 +10,18 @@ import { UilShoppingBag, UilReceipt, UilBars } from '@iconscout/react-unicons';
 
 const Header = () => {
     const [order, setOrder] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
         setOrder(localStorage.getItem("order"));
     }, []);
 
     // state in terminal
     const state = useStore((state) => state);
-
     const cartItemsLength = useStore((state) => state.cart.pizzas.length);
+
+    const handleMobileMenu = () => {
+        setIsOpen(!isOpen);
+    }
     return (
         <div className={classes.header}>
             {/* Logo Side */}
@@ -56,10 +60,16 @@ const Header = () => {
                     )
                 }
             </div>
-            <div className={classes.toggleBtn}>
+            <div className={classes.toggleBtn} onClick={handleMobileMenu}>
                 <UilBars size={35} />
             </div>
-
+            {isOpen && <div className={classes.mobileMenu}>
+                <ul>
+                    <li onClick={() => setIsOpen(false)}><Link href="/">Home</Link></li>
+                    <li onClick={() => setIsOpen(false)}><Link href="/menu">Menu</Link></li>
+                    <li onClick={() => setIsOpen(false)}><Link href="/contact">Contact</Link></li>
+                </ul>
+            </div>}
         </div>
     );
 }

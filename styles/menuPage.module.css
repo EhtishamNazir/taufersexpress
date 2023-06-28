@@ -1,9 +1,112 @@
 .container {
     padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+
+.heading>:nth-child(1) {
+    color: var(--themeRed);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.heading>:nth-child(2),
+.heading>:nth-child(3) {
+    font-size: 2rem;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.pizza {
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.imageWrapper {
+    height: 16rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+/* next pre built image component work like this */
+.imageWrapper>img:hover {
+    transform: scale(1.1);
+}
+
+.pizza:hover {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
     .container {
         padding: 1rem;
+    }
+
+    .heading>:nth-child(1) {
+        margin-bottom: 1rem;
+    }
+
+    .heading>:nth-child(2),
+    .heading>:nth-child(3) {
+        font-size: 1.5rem;
+    }
+
+    .pizza {
+        width: 100%;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .menu {
+        width: 100%;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .pizza {
+        width: 48%;
+        margin-bottom: 1.5rem;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .pizza {
+        width: 48%;
+        margin-bottom: 1.5rem;
+    }
+
+    .imageWrapper {
+        width: 100%;
     }
 }
