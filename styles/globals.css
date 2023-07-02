@@ -11,12 +11,12 @@ body {
 }
 
 :root {
-  --themeRed: #F54748;
-  --themeBlack: #2E2E2E;
+  --themeRed: #9C1502;
+  --themeBlack: #470101;
   --pink: #FDECEC;
   --gray: #828282;
   --shadow: -4px 12px 20px -2px rgba(0, 0, 0, 0.19);
-  --background-color: linear-gradient(180deg, rgba(255, 237, 237, 0.85) 0%, rgba(255, 255, 255, 0) 30rem);
+  --background-color: linear-gradient(180deg, rgba(221, 142, 39, 0.85) 0%, rgba(255, 255, 255, 0) 30rem);
   --cartBack: rgba(255, 255, 255, 0.38);
 }
 
