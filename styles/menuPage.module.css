@@ -60,6 +60,26 @@
     cursor: pointer;
 }
 
+.tabs {
+    width: 100%;
+}
+
+.tabs button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-color: grey;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tabs button:hover,
+.tabs button.active {
+    background-color: #dd8e27;
+}
+
 @media screen and (max-width: 480px) {
     .container {
         padding: 1rem;
@@ -81,6 +101,15 @@
     .imageWrapper {
         width: 100%;
     }
+
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .tabs button {}
+
 }
 
 @media screen and (max-width: 768px) and (min-width: 481px) {

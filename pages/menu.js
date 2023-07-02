@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,7 +7,9 @@ import urlFor from '../lib/client';
 import classes from '../styles/menuPage.module.css';
 import Layout from '../components/Layout';
 
-export default function FullMenu({ pizzas }) {
+export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner, salads, finger, calzone, drinks }) {
+    const [activeTab, setActiveTab] = useState(0);
+    console.log(activeTab);
     return (
         <Layout>
             <div className={classes.container}>
@@ -15,11 +18,21 @@ export default function FullMenu({ pizzas }) {
                     <span>Menu That Always</span>
                     <span>Make you Fall in Love</span>
                 </div>
-
+                <div className={classes.tabs}>
+                    <button onClick={() => setActiveTab(0)} className={activeTab === 0 ? classes.active : ''}>Pizza</button>
+                    <button onClick={() => setActiveTab(1)} className={activeTab === 1 ? classes.active : ''}>Pizza Sandwitches</button>
+                    <button onClick={() => setActiveTab(2)} className={activeTab === 2 ? classes.active : ''}>Burgers</button>
+                    <button onClick={() => setActiveTab(3)} className={activeTab === 3 ? classes.active : ''}>Oriental Food</button>
+                    <button onClick={() => setActiveTab(4)} className={activeTab === 4 ? classes.active : ''}>Doner Box</button>
+                    <button onClick={() => setActiveTab(5)} className={activeTab === 5 ? classes.active : ''}>Salads</button>
+                    <button onClick={() => setActiveTab(6)} className={activeTab === 6 ? classes.active : ''}>Finger Food & Crisps</button>
+                    <button onClick={() => setActiveTab(7)} className={activeTab === 7 ? classes.active : ''}>Calzone & Floncionos</button>
+                    <button onClick={() => setActiveTab(8)} className={activeTab === 8 ? classes.active : ''}>Drinks</button>
+                </div>
                 {/* Pizzas */}
-                <div className={classes.menu}>
+                {activeTab === 0 ? <div className={classes.menu}>
                     {
-                        pizzas.map((pizza, id) => {
+                        pizzas.length > 0 ? pizzas.map((pizza, id) => {
                             const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
@@ -32,20 +45,188 @@ export default function FullMenu({ pizzas }) {
                                     <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
-                        })
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
                     }
-                </div>
+                </div> : ""}
+                {activeTab === 1 ? <div className={classes.menu}>
+                    {
+                        sandwiches.length > 0 ? sandwiches.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
+                {activeTab === 2 ? <div className={classes.menu}>
+                    {
+                        burgers.length > 0 ? burgers.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
+                {activeTab === 3 ? <div className={classes.menu}>
+                    {
+                        oriental.length > 0 ? oriental.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
+                {activeTab === 4 ? <div className={classes.menu}>
+                    {
+                        doner.length > 0 ? doner.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
+                {activeTab === 5 ? <div className={classes.menu}>
+                    {
+                        salads.length > 0 ? salads.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
+                {activeTab === 6 ? <div className={classes.menu}>
+                    {
+                        finger.length > 0 ? finger.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
+                {activeTab === 7 ? <div className={classes.menu}>
+                    {
+                        calzone.length > 0 ? calzone.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
+                {activeTab === 8 ? <div className={classes.menu}>
+                    {
+                        drinks.length > 0 ? drinks.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span>{pizza.name}</span>
+                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
             </div>
         </Layout>
     );
 }
 
 export const getServerSideProps = async () => {
-    const query = '*[_type == "pizza"]';
+    const query = '*[_type == "pizza" && category in ["pizza"]]';
     const pizzas = await client.fetch(query);
+    const query1 = '*[_type == "pizza" && category in ["sandwiches"]]';
+    const sandwiches = await client.fetch(query1);
+    const query2 = '*[_type == "pizza" && category in ["burgers"]]';
+    const burgers = await client.fetch(query2);
+    const query3 = '*[_type == "pizza" && category in ["oriental"]]';
+    const oriental = await client.fetch(query3);
+    const query4 = '*[_type == "pizza" && category in ["doner"]]';
+    const doner = await client.fetch(query4);
+    const query5 = '*[_type == "pizza" && category in ["salads"]]';
+    const salads = await client.fetch(query5);
+    const query6 = '*[_type == "pizza" && category in ["finger"]]';
+    const finger = await client.fetch(query6);
+    const query7 = '*[_type == "pizza" && category in ["calzone"]]';
+    const calzone = await client.fetch(query7);
+    const query8 = '*[_type == "pizza" && category in ["drinks"]]';
+    const drinks = await client.fetch(query8);
     return {
         props: {
-            pizzas
+            pizzas,
+            sandwiches,
+            burgers,
+            oriental,
+            doner,
+            salads,
+            finger,
+            calzone,
+            drinks
         }
     }
 }
