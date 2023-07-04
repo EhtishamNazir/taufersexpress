@@ -1,10 +1,11 @@
 import Image from "next/image";
 
 import classes from '../styles/hero.module.css';
-import Cherry from '../assets/Cherry.png';
+import Faster from '../assets/faster.png';
+import WhatsApp from '../assets/whatsapp.webp';
 import HeroImage from '../assets/HeroImage.png';
 import { UilPhone } from '@iconscout/react-unicons';
-import Pizza1 from '../assets/p1.jpg';
+import TaufersPizza from '../assets/taufers-pizza.png';
 import Link from "next/link";
 
 const Hero = () => {
@@ -25,7 +26,7 @@ const Hero = () => {
             <div className={classes.left}>
                 <div className={classes.cherryDiv}>
                     <span>More than Faster</span>
-                    <Image src={Cherry} alt="Cherry Image" width={40} height={25} />
+                    <Image src={Faster} alt="Cherry Image" width={25} height={25} />
                 </div>
                 <div className={classes.heroText}>
                     <span>Be The Fastest</span>
@@ -44,17 +45,16 @@ const Hero = () => {
                 </div>
                 <Link href={whatsappLink}>
                     <div className={classes.contactUs}>
-                        <span>Contact Us</span>
-                        <div><UilPhone color="white" /></div>
+                        <Image src={WhatsApp} width={40} height={40} />
                     </div>
                 </Link>
                 <div className={classes.pizza}>
                     <div>
-                        <Image src={Pizza1} alt="" objectFit="cover" layout="intrinsic" />
+                        <Image src={TaufersPizza} alt="" objectFit="cover" layout="intrinsic" />
                     </div>
                     <div className={classes.details}>
-                        <span>Italian Pizza</span>
-                        <span><span style={{ color: 'var(--themeRed)' }}>$</span> 7.49</span>
+                        <span>TAUFERS PIZZA</span>
+                        <span><span style={{ color: 'var(--themeRed)' }}>€</span> 9.50</span>
                     </div>
                 </div>
             </div>

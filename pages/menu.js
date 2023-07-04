@@ -6,6 +6,14 @@ import { client } from "../lib/client";
 import urlFor from '../lib/client';
 import classes from '../styles/menuPage.module.css';
 import Layout from '../components/Layout';
+import Pizza from '../assets/pizza.png';
+import Sandwitch from '../assets/sandwitch.png';
+import Burger from '../assets/burger.png';
+import Wrap from '../assets/wrap.png';
+import Doner from '../assets/doner.png';
+import Fries from '../assets/fries.png';
+import Drink from '../assets/drink.png';
+import Pizza2 from '../assets/pizza-2.png';
 
 export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner, salads, finger, calzone, drinks }) {
     const [activeTab, setActiveTab] = useState(0);
@@ -19,15 +27,60 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                     <span>Make you Fall in Love</span>
                 </div>
                 <div className={classes.tabs}>
-                    <button onClick={() => setActiveTab(0)} className={activeTab === 0 ? classes.active : ''}>Pizza</button>
-                    <button onClick={() => setActiveTab(1)} className={activeTab === 1 ? classes.active : ''}>Pizza Sandwitches</button>
-                    <button onClick={() => setActiveTab(2)} className={activeTab === 2 ? classes.active : ''}>Burgers</button>
-                    <button onClick={() => setActiveTab(3)} className={activeTab === 3 ? classes.active : ''}>Oriental Food</button>
-                    <button onClick={() => setActiveTab(4)} className={activeTab === 4 ? classes.active : ''}>Doner Box</button>
-                    <button onClick={() => setActiveTab(5)} className={activeTab === 5 ? classes.active : ''}>Salads</button>
-                    <button onClick={() => setActiveTab(6)} className={activeTab === 6 ? classes.active : ''}>Finger Food & Crisps</button>
-                    <button onClick={() => setActiveTab(7)} className={activeTab === 7 ? classes.active : ''}>Calzone & Floncionos</button>
-                    <button onClick={() => setActiveTab(8)} className={activeTab === 8 ? classes.active : ''}>Drinks</button>
+                    <div onClick={() => setActiveTab(0)} className={` ${activeTab === 0 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Pizza} width={30} height={30} />
+                        </div>
+                        <span>Pizza</span>
+                    </div>
+                    <div onClick={() => setActiveTab(1)} className={` ${activeTab === 1 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Sandwitch} width={30} height={30} />
+                        </div>
+                        <span>Sandwitch</span>
+                    </div>
+                    <div onClick={() => setActiveTab(2)} className={` ${activeTab === 2 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Burger} width={30} height={30} />
+                        </div>
+                        <span>Burgers</span>
+                    </div>
+                    <div onClick={() => setActiveTab(3)} className={` ${activeTab === 3 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Wrap} width={30} height={30} />
+                        </div>
+                        <span>Oriental</span>
+                    </div>
+                    <div onClick={() => setActiveTab(4)} className={` ${activeTab === 4 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Doner} width={30} height={30} />
+                        </div>
+                        <span>Doner Box</span>
+                    </div>
+                    <div onClick={() => setActiveTab(5)} className={` ${activeTab === 5 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Doner} width={30} height={30} />
+                        </div>
+                        <span>Salads</span>
+                    </div>
+                    <div onClick={() => setActiveTab(6)} className={` ${activeTab === 6 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Fries} width={30} height={30} />
+                        </div>
+                        <span>Crisps</span>
+                    </div>
+                    <div onClick={() => setActiveTab(7)} className={` ${activeTab === 7 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Pizza2} width={30} height={30} />
+                        </div>
+                        <span>Calzone</span>
+                    </div>
+                    <div onClick={() => setActiveTab(8)} className={` ${activeTab === 8 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Drink} width={30} height={30} />
+                        </div>
+                        <span>Drinks</span>
+                    </div>
                 </div>
                 {/* Pizzas */}
                 {activeTab === 0 ? <div className={classes.menu}>
@@ -193,7 +246,7 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                     }
                 </div> : ""}
             </div>
-        </Layout>
+        </Layout >
     );
 }
 

@@ -23,6 +23,10 @@
     color: var(--themeRed);
 }
 
+.cherryDiv>span {
+    margin-right: 0.6rem;
+}
+
 .heroText {
     display: flex;
     flex-direction: column;
@@ -59,22 +63,12 @@
     top: 6rem;
     left: -6rem;
     width: max-content;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 5rem;
     gap: 1rem;
     background-color: white;
     box-shadow: var(--shadow);
     color: var(--themeRed);
-}
-
-.contactUs>div {
-    background: rgb(59, 208, 59);
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .contactUs:hover {
