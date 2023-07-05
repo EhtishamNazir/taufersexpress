@@ -1,10 +1,9 @@
-
 import Image from 'next/image';
+import Link from 'next/link';
 
 import classes from '../styles/footer.module.css';
 import { UilFacebook, UilWhatsapp, UilInstagram } from '@iconscout/react-unicons';
-import Logo from '../assets/Logo.png';
-import Link from 'next/link';
+import Logo from '../assets/logo-2.png';
 
 const Footer = () => {
     const phoneNumber = '+393248909003'; // Replace with your desired phone number
@@ -32,8 +31,9 @@ const Footer = () => {
                 </Link>
             </div>
             <div className={classes.logo}>
-                <Image src={Logo} alt="Logo" width={150} height={50} />
-                {/* <span>Fudo</span> */}
+                <Link href="/">
+                    <Image src={Logo} alt="Logo" width={150} height={50} />
+                </Link>
             </div>
         </div>
     );

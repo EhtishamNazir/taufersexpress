@@ -3,9 +3,10 @@ import { client } from '../../lib/client';
 import Image from 'next/image';
 
 import classes from '../../styles/order.module.css';
-import { UilBill, UilBox } from '@iconscout/react-unicons';
 import Cooking from '../../assets/cooking.png';
 import Onway from '../../assets/onway.png';
+import Delivered from '../../assets/delivered.png';
+import Bill from '../../assets/bill.png';
 import Spinner from '../../assets/spinner.svg';
 import { useEffect } from 'react';
 
@@ -50,11 +51,13 @@ export default function Orders({ order }) {
                 </div>
                 <div className={classes.statusContainer}>
                     <div className={classes.status}>
-                        <UilBill width={50} height={50} />
+                        <Image src={Bill} alt="Bill" height={50} width={50} />
                         <span>Payment</span>
                         {order.method === 0 ?
                             <span className={classes.pending}>On Delivery</span> :
-                            <span className={classes.completed}>Completed</span>
+                            <span className={classes.completed}>
+                                <span>Completed</span><span>Done</span>
+                            </span>
                         }
                     </div>
                     <div className={classes.status}>
@@ -67,7 +70,7 @@ export default function Orders({ order }) {
                         }
                         {order.status > 1 &&
                             <span className={classes.completed}>
-                                Completed
+                                <span>Completed</span><span>Done</span>
                             </span>
                         }
                     </div>
@@ -81,12 +84,12 @@ export default function Orders({ order }) {
                         }
                         {order.status > 2 &&
                             <span className={classes.completed}>
-                                Completed
+                                <span>Completed</span><span>Done</span>
                             </span>
                         }
                     </div>
                     <div className={classes.status}>
-                        <UilBox height={50} width={50} />
+                        <Image src={Delivered} alt="Delivered" height={50} width={50} />
                         <span>Delivered</span>
                         {order.status === 3 &&
                             <div className={classes.spinner}>
@@ -95,7 +98,7 @@ export default function Orders({ order }) {
                         }
                         {order.status > 3 &&
                             <span className={classes.completed}>
-                                Completed
+                                <span>Completed</span><span>Done</span>
                             </span>
                         }
                     </div>

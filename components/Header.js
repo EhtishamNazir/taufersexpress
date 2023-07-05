@@ -43,7 +43,7 @@ const Header = () => {
             <div className={classes.rightSide}>
                 <Link href='/cart'>
                     <div className={classes.cart}>
-                        <UilShoppingBag size={35} color='#2e2e2e' />
+                        <UilShoppingBag size={35} color='#fff' />
                         <div className={classes.badge}>{cartItemsLength}</div>
                     </div>
                 </Link>
@@ -51,7 +51,7 @@ const Header = () => {
                     order && (
                         <Link href={`/order/${order}`}>
                             <div className={classes.cart}>
-                                <UilReceipt size={35} color='#2e2e2e' />
+                                <UilReceipt size={35} color='#fff' />
                                 {order != "" &&
                                     <div className={classes.badge}>1</div>
                                 }

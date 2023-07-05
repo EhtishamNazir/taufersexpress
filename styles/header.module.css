@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
+    color: #fff;
+    background-color: var(--themeRed);
 }
 
 .logo {
@@ -27,9 +29,13 @@
     z-index: 99;
 }
 
+.menu>li {
+    text-transform: uppercase;
+}
+
 .menu>li:hover {
     cursor: pointer;
-    color: var(--themeRed);
+    color: rgb(221, 142, 39);
 }
 
 .rightSide {
@@ -49,7 +55,7 @@
 .badge {
     position: absolute;
     display: flex;
-    background-color: var(--themeRed);
+    background-color: rgb(221, 142, 39);
     color: #fff;
     border-radius: 50%;
     width: 20px;

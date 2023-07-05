@@ -41,6 +41,9 @@
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
+    box-shadow: var(--shadow);
+    border-radius: 0.8rem;
+    padding: 1rem;
 }
 
 .imageWrapper {
@@ -61,11 +64,11 @@
 }
 
 .tabs {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
+    margin: auto;
 }
 
 .tabs .tab {
