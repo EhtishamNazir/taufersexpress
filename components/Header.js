@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useStore } from "../store/store";
 import classes from '../styles/header.module.css';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/logo.png';
 import { UilShoppingBag, UilReceipt, UilBars } from '@iconscout/react-unicons';
 
 
