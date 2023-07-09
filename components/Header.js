@@ -27,7 +27,7 @@ const Header = () => {
             {/* Logo Side */}
             <div className={classes.logo}>
                 <Link href='/'>
-                    <Image src={Logo} alt="Logo" width={0} height={0} sizes="100vw" style={{ width: '150px', height: 'auto' }} />
+                    <Image src={Logo} alt="Logo" width={150} height={50} />
                 </Link>
                 {/* <span>Fudo</span> */}
             </div>
