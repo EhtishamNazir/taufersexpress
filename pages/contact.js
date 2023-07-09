@@ -2,8 +2,8 @@
 
 export default function Contact() {
     return (
-        // <Layout>
-
-        // </Layout>
+        <div>
+            <h1 style={{ marginTop: '2rem', textAlign: 'center' }}>Contact Us</h1>
+        </div>
     )
 }
