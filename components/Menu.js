@@ -26,7 +26,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Pizza} width={150} height={150} />
+                            <Image src={Pizza} alt='Pizzza' width={150} height={150} />
                         </div>
                         <span>Pizza</span>
                     </div>
@@ -34,7 +34,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Burger} width={150} height={150} />
+                            <Image src={Burger} alt='Burger' width={150} height={150} />
                         </div>
                         <span>Burgers</span>
                     </div>
@@ -42,7 +42,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Sandwitch} width={150} height={150} />
+                            <Image src={Sandwitch} alt='Sandwitch' width={150} height={150} />
                         </div>
                         <span>Sandwitches</span>
                     </div>
@@ -50,7 +50,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Wrap} width={150} height={150} />
+                            <Image src={Wrap} alt='Wrap' width={150} height={150} />
                         </div>
                         <span>Oriental Food</span>
                     </div>
@@ -58,7 +58,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Doner} width={150} height={150} />
+                            <Image src={Doner} alt='Doner' width={150} height={150} />
                         </div>
                         <span>Doner</span>
                     </div>
@@ -66,7 +66,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Fries} width={150} height={150} />
+                            <Image src={Fries} alt='Fries' width={150} height={150} />
                         </div>
                         <span>Finger Food</span>
                     </div>
@@ -74,7 +74,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Calzone} width={150} height={150} />
+                            <Image src={Calzone} alt='Calzone' width={150} height={150} />
                         </div>
                         <span>Calzone</span>
                     </div>
@@ -82,7 +82,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Drinks} width={150} height={150} />
+                            <Image src={Drinks} alt='Drinks' width={150} height={150} />
                         </div>
                         <span>Drinks</span>
                     </div>
@@ -90,7 +90,7 @@ export default function Menu(props) {
                 <Link href="/menu">
                     <div className={classes.menuItem}>
                         <div className={classes.icon}>
-                            <Image src={Salad} width={150} height={150} />
+                            <Image src={Salad} alt='Salad' width={150} height={150} />
                         </div>
                         <span>Salads</span>
                     </div>

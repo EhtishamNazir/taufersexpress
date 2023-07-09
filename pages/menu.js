@@ -30,55 +30,55 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 <div className={classes.tabs}>
                     <div onClick={() => setActiveTab(0)} className={` ${activeTab === 0 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Pizza} width={30} height={30} />
+                            <Image src={Pizza} alt='Pizza' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Pizza</span>
                     </div>
                     <div onClick={() => setActiveTab(1)} className={` ${activeTab === 1 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Sandwitch} width={30} height={30} />
+                            <Image src={Sandwitch} alt='Sandwitch' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Sandwitch</span>
                     </div>
                     <div onClick={() => setActiveTab(2)} className={` ${activeTab === 2 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Burger} width={30} height={30} />
+                            <Image src={Burger} alt='Burger' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Burgers</span>
                     </div>
                     <div onClick={() => setActiveTab(3)} className={` ${activeTab === 3 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Wrap} width={30} height={30} />
+                            <Image src={Wrap} alt='Wrap' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Oriental</span>
                     </div>
                     <div onClick={() => setActiveTab(4)} className={` ${activeTab === 4 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Doner} width={30} height={30} />
+                            <Image src={Doner} alt='Doner' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Doner Box</span>
                     </div>
                     <div onClick={() => setActiveTab(5)} className={` ${activeTab === 5 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Salad} width={30} height={30} />
+                            <Image src={Salad} alt='Salad' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Salads</span>
                     </div>
                     <div onClick={() => setActiveTab(6)} className={` ${activeTab === 6 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Fries} width={30} height={30} />
+                            <Image src={Fries} alt='Fries' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Crisps</span>
                     </div>
                     <div onClick={() => setActiveTab(7)} className={` ${activeTab === 7 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Calzone} width={30} height={30} />
+                            <Image src={Calzone} alt='Calzone' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Calzone</span>
                     </div>
                     <div onClick={() => setActiveTab(8)} className={` ${activeTab === 8 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Drinks} width={30} height={30} />
+                            <Image src={Drinks} alt='Drinks' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Drinks</span>
                     </div>
