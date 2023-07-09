@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useStore } from "../store/store";
 import classes from '../styles/header.module.css';
-// import Logo from '../assets/logo.png';
+import Logo from '../assets/Logo.png';
 import { UilShoppingBag, UilReceipt, UilBars } from '@iconscout/react-unicons';
 
 
@@ -27,7 +27,7 @@ const Header = () => {
             {/* Logo Side */}
             <div className={classes.logo}>
                 <Link href='/'>
-                    {/* <Image src={Logo} alt="Logo" width={150} height={50} /> */}
+                    <Image src={Logo} alt="Logo" width={150} height={50} />
                 </Link>
                 {/* <span>Fudo</span> */}
             </div>
