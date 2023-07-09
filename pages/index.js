@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Menu from "../components/Menu";
+import DeliveryInfo from "../components/DeliveryInfo";
 import classes from '../styles/home.module.css';
 import { client } from "../lib/client";
 
@@ -25,6 +26,7 @@ export default function Home({ pizzas }) {
           <Hero />
           <Services />
           <Menu pizzas={pizzas} />
+          <DeliveryInfo />
         </main>
       </div>
     </Layout>

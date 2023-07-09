@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:wght@300;400;500;600;700;800&family=PT+Sans+Narrow:wght@400;700&display=swap');
 
 
 html,
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--themeBlack);
-  background: var(--background-color);
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: var(--themeWhite);
+  background: var(--themeBlack);
   overflow-x: hidden;
 }
 
 :root {
   --themeRed: #9C1502;
-  --themeBlack: #470101;
-  --pink: #FDECEC;
+  --themeBlack: #121618;
+  --themeWhite: #fbfbfb;
+  --themeOrange: #F79500;
   --gray: #828282;
   --shadow: -4px 12px 20px -2px rgba(0, 0, 0, 0.19);
   --background-color: linear-gradient(180deg, rgba(221, 142, 39, 0.85) 0%, rgba(255, 255, 255, 0) 30rem);
@@ -33,13 +34,13 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--themeRed);
+  background: var(--themeOrange);
   border-radius: 1rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--themeRed);
 }
 
 
@@ -62,5 +63,5 @@ a {
   color: white;
   font-size: 1.1rem;
   cursor: pointer;
-  background-color: var(--themeRed);
+  background-color: var(--themeOrange);
 }

@@ -85,7 +85,7 @@ export default function Cart() {
                                         <td>{pizza.price}</td>
                                         <td>{pizza.quantity}</td>
                                         <td>{pizza.price * pizza.quantity}</td>
-                                        <td style={{ color: 'var(--themeRed)', cursor: 'pointer' }} onClick={() => handleRemove(i)}>x</td>
+                                        <td style={{ color: 'var(--themeOrange)', cursor: 'pointer', fontSize: '1.3rem' }} onClick={() => handleRemove(i)}>x</td>
                                     </tr>
                                 )
                             })}
@@ -102,7 +102,7 @@ export default function Cart() {
                         </div>
                         <div>
                             <span>Total:</span>
-                            <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{total()}</span>
+                            <span><span style={{ color: 'var(--themeOrange)' }}>€ </span>{total()}</span>
                         </div>
                     </div>
                     {!order && cartData.pizzas.length > 0 ? (

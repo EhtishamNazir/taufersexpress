@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 2.2fr 1fr;
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .table {
@@ -38,6 +39,7 @@
 .cart>span {
     font-weight: bold;
     font-size: 1.5rem;
+    letter-spacing: 0.1rem;
 }
 
 .cartDetails {
@@ -52,6 +54,11 @@
     justify-content: space-between;
 }
 
+.cartDetails>div>span {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
 .buttons {
     display: flex;
     gap: 1rem;
@@ -64,8 +71,8 @@
 
 .buttons>:nth-child(1) {
     background-color: transparent;
-    color: var(--themeRed);
-    border: 2px solid var(--themeRed);
+    color: var(--themeWhite);
+    border: 2px solid var(--themeOrange);
 }
 
 @media screen and (max-width: 480px) {

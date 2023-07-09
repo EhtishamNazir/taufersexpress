@@ -3,7 +3,7 @@ import Image from "next/image";
 import classes from '../styles/hero.module.css';
 import Faster from '../assets/faster.png';
 import WhatsApp from '../assets/whatsapp.webp';
-import HeroImage from '../assets/HeroImage.png';
+import HeroPizza from '../assets/hero-pizza-img.png';
 import { UilPhone } from '@iconscout/react-unicons';
 import TaufersPizza from '../assets/taufers-pizza.png';
 import Link from "next/link";
@@ -24,14 +24,13 @@ const Hero = () => {
         <div className={classes.container}>
             {/* Left Side */}
             <div className={classes.left}>
-                <div className={classes.cherryDiv}>
+                <div className={classes.fasterDiv}>
                     <span>More than Faster</span>
                     <Image src={Faster} alt="Cherry Image" width={25} height={25} />
                 </div>
                 <div className={classes.heroText}>
-                    <span>Be The Fastest</span>
-                    <span>In Delivering</span>
-                    <span>Your <span style={{ color: "var(--themeRed)" }}>Pizza</span></span>
+                    <span>Be The Fastest In</span>
+                    <span>Delivering Your <span style={{ color: "var(--themeOrange)" }}>Pizza</span></span>
                 </div>
                 <span className={classes.miniText}>
                     Our Mission is to filling your tummy with delicious food and with free fome delivery.
@@ -41,14 +40,14 @@ const Hero = () => {
             {/* Right Side */}
             <div className={classes.right}>
                 <div className={classes.imageContainer}>
-                    <Image src={HeroImage} alt="Hero Image" layout="intrinsic" />
+                    <Image src={HeroPizza} alt="Hero Pizza" layout="intrinsic" />
                 </div>
                 <Link href={whatsappLink}>
                     <div className={classes.contactUs}>
                         <Image src={WhatsApp} width={40} height={40} />
                     </div>
                 </Link>
-                <div className={classes.pizza}>
+                {/* <div className={classes.pizza}>
                     <div>
                         <Image src={TaufersPizza} alt="" objectFit="cover" layout="intrinsic" />
                     </div>
@@ -56,7 +55,7 @@ const Hero = () => {
                         <span>TAUFERS PIZZA</span>
                         <span><span style={{ color: 'var(--themeRed)' }}>€</span> 9.50</span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

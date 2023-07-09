@@ -17,11 +17,11 @@
 .formContainer>span>span {
     font-weight: bold;
     font-size: 1.3rem;
-    color: var(--themeRed);
+    color: var(--themeOrange);
 }
 
 .formContainer>button {
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
-    background-color: rgb(59, 208, 59);
+    background-color: var(--themeOrange);
 }

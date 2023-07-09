@@ -8,7 +8,7 @@ import s3 from '../assets/s3.png';
 
 export default function Services() {
     return (
-        <Fragment>
+        <div className={classes.container}>
             <div className={classes.heading}>
                 <span>What We Serve</span>
                 <span>Your Favourite Food</span>
@@ -38,6 +38,6 @@ export default function Services() {
                     <span>Not only fast for us, quality is also number one</span>
                 </div>
             </div>
-        </Fragment>
+        </div>
     );
 }

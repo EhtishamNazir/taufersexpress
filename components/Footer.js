@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import classes from '../styles/footer.module.css';
 import { UilFacebook, UilWhatsapp, UilInstagram } from '@iconscout/react-unicons';
-import Logo from '../assets/logo-2.png';
+import Logo from '../assets/logo.png';
 
 const Footer = () => {
     const phoneNumber = '+393248909003'; // Replace with your desired phone number
@@ -18,23 +18,23 @@ const Footer = () => {
 
     return (
         <div className={classes.container}>
-            <span>ALL RIGHT RESERVED</span>
-            <div className={classes.social}>
-                <Link href="https://www.facebook.com/TaufersExpress">
-                    <UilFacebook size={45} />
-                </Link>
-                <Link href={whatsappLink}>
-                    <UilWhatsapp size={45} />
-                </Link>
-                <Link href="https://www.instagram.com/taufersexpresspizza/">
-                    <UilInstagram size={45} />
-                </Link>
-            </div>
             <div className={classes.logo}>
                 <Link href="/">
                     <Image src={Logo} alt="Logo" width={150} height={50} />
                 </Link>
             </div>
+            <div className={classes.social}>
+                <Link href="https://www.facebook.com/TaufersExpress">
+                    <UilFacebook size={30} />
+                </Link>
+                <Link href={whatsappLink}>
+                    <UilWhatsapp size={30} />
+                </Link>
+                <Link href="https://www.instagram.com/taufersexpresspizza/">
+                    <UilInstagram size={30} />
+                </Link>
+            </div>
+            <span className={classes.copyright}>Copyright © 2023. All Rights Reserved.</span>
         </div>
     );
 }

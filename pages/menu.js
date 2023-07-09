@@ -6,14 +6,15 @@ import { client } from "../lib/client";
 import urlFor from '../lib/client';
 import classes from '../styles/menuPage.module.css';
 import Layout from '../components/Layout';
-import Pizza from '../assets/pizza.png';
-import Sandwitch from '../assets/sandwitch.png';
-import Burger from '../assets/burger.png';
-import Wrap from '../assets/wrap.png';
-import Doner from '../assets/doner.png';
-import Fries from '../assets/fries.png';
-import Drink from '../assets/drink.png';
-import Pizza2 from '../assets/pizza-2.png';
+import Pizza from '../assets/pizza-sm.png';
+import Sandwitch from '../assets/sandwitch-sm.png';
+import Burger from '../assets/burger-sm.png';
+import Wrap from '../assets/wrap-sm.png';
+import Doner from '../assets/doner-sm.png';
+import Fries from '../assets/fries-sm.png';
+import Drinks from '../assets/drinks-sm.png';
+import Calzone from '../assets/calzone-sm.png';
+import Salad from '../assets/salad-sm.png';
 
 export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner, salads, finger, calzone, drinks }) {
     const [activeTab, setActiveTab] = useState(0);
@@ -31,55 +32,55 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                         <div className={classes.icon}>
                             <Image src={Pizza} width={30} height={30} />
                         </div>
-                        <span>Pizza</span>
+                        <span className={classes.itemName}>Pizza</span>
                     </div>
                     <div onClick={() => setActiveTab(1)} className={` ${activeTab === 1 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
                             <Image src={Sandwitch} width={30} height={30} />
                         </div>
-                        <span>Sandwitch</span>
+                        <span className={classes.itemName}>Sandwitch</span>
                     </div>
                     <div onClick={() => setActiveTab(2)} className={` ${activeTab === 2 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
                             <Image src={Burger} width={30} height={30} />
                         </div>
-                        <span>Burgers</span>
+                        <span className={classes.itemName}>Burgers</span>
                     </div>
                     <div onClick={() => setActiveTab(3)} className={` ${activeTab === 3 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
                             <Image src={Wrap} width={30} height={30} />
                         </div>
-                        <span>Oriental</span>
+                        <span className={classes.itemName}>Oriental</span>
                     </div>
                     <div onClick={() => setActiveTab(4)} className={` ${activeTab === 4 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
                             <Image src={Doner} width={30} height={30} />
                         </div>
-                        <span>Doner Box</span>
+                        <span className={classes.itemName}>Doner Box</span>
                     </div>
                     <div onClick={() => setActiveTab(5)} className={` ${activeTab === 5 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Doner} width={30} height={30} />
+                            <Image src={Salad} width={30} height={30} />
                         </div>
-                        <span>Salads</span>
+                        <span className={classes.itemName}>Salads</span>
                     </div>
                     <div onClick={() => setActiveTab(6)} className={` ${activeTab === 6 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
                             <Image src={Fries} width={30} height={30} />
                         </div>
-                        <span>Crisps</span>
+                        <span className={classes.itemName}>Crisps</span>
                     </div>
                     <div onClick={() => setActiveTab(7)} className={` ${activeTab === 7 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Pizza2} width={30} height={30} />
+                            <Image src={Calzone} width={30} height={30} />
                         </div>
-                        <span>Calzone</span>
+                        <span className={classes.itemName}>Calzone</span>
                     </div>
                     <div onClick={() => setActiveTab(8)} className={` ${activeTab === 8 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
-                            <Image src={Drink} width={30} height={30} />
+                            <Image src={Drinks} width={30} height={30} />
                         </div>
-                        <span>Drinks</span>
+                        <span className={classes.itemName}>Drinks</span>
                     </div>
                 </div>
                 {/* Pizzas */}
@@ -94,8 +95,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -112,8 +113,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -130,8 +131,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -148,8 +149,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -166,8 +167,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -184,8 +185,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -202,8 +203,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -220,8 +221,8 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -238,15 +239,15 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                                             <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
-                                    <span>{pizza.name}</span>
-                                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
                     }
                 </div> : ""}
             </div>
-        </Layout >
+        </Layout>
     );
 }
 

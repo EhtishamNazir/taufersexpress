@@ -3,6 +3,15 @@ import Link from 'next/link';
 
 import urlFor from '../lib/client';
 import classes from '../styles/menu.module.css';
+import Pizza from '../assets/pizza.png';
+import Sandwitch from '../assets/sandwitch.png';
+import Burger from '../assets/burger.png';
+import Wrap from '../assets/wrap.png';
+import Doner from '../assets/doner.png';
+import Fries from '../assets/fries.png';
+import Drinks from '../assets/drinks.png';
+import Calzone from '../assets/calzone.png';
+import Salad from '../assets/salad.png';
 
 export default function Menu(props) {
     const pizzas = props.pizzas;
@@ -13,9 +22,82 @@ export default function Menu(props) {
                 <span>Menu That Always</span>
                 <span>Make you Fall in Love</span>
             </div>
-
+            <div className={classes.menuItems}>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Pizza} width={150} height={150} />
+                        </div>
+                        <span>Pizza</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Burger} width={150} height={150} />
+                        </div>
+                        <span>Burgers</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Sandwitch} width={150} height={150} />
+                        </div>
+                        <span>Sandwitches</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Wrap} width={150} height={150} />
+                        </div>
+                        <span>Oriental Food</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Doner} width={150} height={150} />
+                        </div>
+                        <span>Doner</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Fries} width={150} height={150} />
+                        </div>
+                        <span>Finger Food</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Calzone} width={150} height={150} />
+                        </div>
+                        <span>Calzone</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Drinks} width={150} height={150} />
+                        </div>
+                        <span>Drinks</span>
+                    </div>
+                </Link>
+                <Link href="/menu">
+                    <div className={classes.menuItem}>
+                        <div className={classes.icon}>
+                            <Image src={Salad} width={150} height={150} />
+                        </div>
+                        <span>Salads</span>
+                    </div>
+                </Link>
+            </div>
             {/* Pizzas */}
-            <div className={classes.menu}>
+            {/* <div className={classes.menu}>
                 {
                     pizzas.slice(0, 6).map((pizza, id) => {
                         const src = urlFor(pizza.image).url();
@@ -32,7 +114,7 @@ export default function Menu(props) {
                         )
                     })
                 }
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -10,7 +10,7 @@ import RightArrow from '../../assets/arrowRight.png';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function Pizza({ pizza }) {
-    const [size, setSize] = useState(1);
+    const [size, setSize] = useState(0);
     const [quantity, setQuantity] = useState(1);
 
     const src = urlFor(pizza.image).url();
@@ -40,13 +40,13 @@ export default function Pizza({ pizza }) {
                 <div className={classes.right}>
                     <span>{pizza.name}</span>
                     <span>{pizza.details}</span>
-                    <span><span style={{ color: 'var(--themeRed)' }}>€ </span>{pizza.price[size]}</span>
+                    <span><span style={{ color: 'var(--themeOrange)' }}>€ </span>{pizza.price[size]}</span>
                     <div className={classes.size}>
                         <span>Size:</span>
                         <div className={classes.sizeVariants}>
                             {/* <div onClick={() => setSize(0)} className={size === 0 ? classes.selected : ''}>S<span>mall</span></div> */}
-                            <div onClick={() => setSize(1)} className={size === 1 ? classes.selected : ''}>Normal<span></span></div>
-                            <div onClick={() => setSize(2)} className={size === 2 ? classes.selected : ''}>Family<span></span></div>
+                            <div onClick={() => setSize(0)} className={size === 0 ? classes.selected : ''}>Normal<span></span></div>
+                            <div onClick={() => setSize(1)} className={size === 1 ? classes.selected : ''}>Family<span></span></div>
                         </div>
                     </div>
                     {/* Quantity Counter */}
