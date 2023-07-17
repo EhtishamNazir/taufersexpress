@@ -24,7 +24,7 @@
 .info {
     font-family: 'Abril Fatface', cursive;
     width: 90%;
-    margin-top: 5rem;
+    margin: 5rem auto 0 auto;
     display: flex;
     justify-content: space-between;
 }
