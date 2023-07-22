@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useStore } from "../store/store";
 import classes from '../styles/header.module.css';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/Logo-Dark.png';
 import { UilShoppingBag, UilReceipt, UilBars } from '@iconscout/react-unicons';
 
 
@@ -44,7 +44,7 @@ const Header = () => {
             <div className={classes.rightSide}>
                 <Link href='/cart'>
                     <div className={classes.cart}>
-                        <UilShoppingBag size={30} color='#F3F3F3' />
+                        <UilShoppingBag size={32} color='#121618' />
                         <div className={classes.badge}>{cartItemsLength}</div>
                     </div>
                 </Link>
@@ -52,7 +52,7 @@ const Header = () => {
                     order && (
                         <Link href={`/order/${order}`}>
                             <div className={classes.cart}>
-                                <UilReceipt size={30} color='#F3F3F3' />
+                                <UilReceipt size={32} color='#121618' />
                                 {order != "" &&
                                     <div className={classes.badge}>1</div>
                                 }
@@ -61,7 +61,7 @@ const Header = () => {
                     )
                 }
                 <div className={classes.toggleBtn} onClick={handleMobileMenu}>
-                    <UilBars size={30} />
+                    <UilBars size={32} />
                 </div>
             </div>
 

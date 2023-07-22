@@ -25,9 +25,9 @@
     background-color: var(--themeOrange);
     padding: 0.7rem 1rem;
     border-radius: 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--themeWhite);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--themeBlack);
     letter-spacing: 0.1rem;
     animation: slide-in 1s ease-in-out forwards;
 }
@@ -54,7 +54,7 @@
 }
 
 .btn {
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
     animation: slide-in 1s ease-in-out forwards;
 }
 

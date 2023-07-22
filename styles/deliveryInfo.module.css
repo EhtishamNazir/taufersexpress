@@ -27,6 +27,7 @@
     margin: 5rem auto 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .info .left {

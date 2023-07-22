@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import classes from '../styles/footer.module.css';
 import { UilFacebook, UilWhatsapp, UilInstagram } from '@iconscout/react-unicons';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/Logo-Dark.png';
 
 const Footer = () => {
     const phoneNumber = '+393248909003'; // Replace with your desired phone number

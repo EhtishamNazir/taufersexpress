@@ -16,7 +16,7 @@ import Drinks from '../assets/drinks-sm.png';
 import Calzone from '../assets/calzone-sm.png';
 import Salad from '../assets/salad-sm.png';
 
-export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner, salads, finger, calzone, drinks }) {
+export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner, salads, finger, calzone, drinks, familyPizza }) {
     const [activeTab, setActiveTab] = useState(0);
     console.log(activeTab);
     return (
@@ -33,6 +33,12 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                             <Image src={Pizza} alt='Pizza' width={30} height={30} />
                         </div>
                         <span className={classes.itemName}>Pizza</span>
+                    </div>
+                    <div onClick={() => setActiveTab(9)} className={` ${activeTab === 9 ? classes.active : ''} ${classes.tab}`}>
+                        <div className={classes.icon}>
+                            <Image src={Pizza} alt='Pizza' width={30} height={30} />
+                        </div>
+                        <span className={classes.itemName}>Family Pizza</span>
                     </div>
                     <div onClick={() => setActiveTab(1)} className={` ${activeTab === 1 ? classes.active : ''} ${classes.tab}`}>
                         <div className={classes.icon}>
@@ -246,6 +252,24 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
                     }
                 </div> : ""}
+                {activeTab === 9 ? <div className={classes.menu}>
+                    {
+                        familyPizza.length > 0 ? familyPizza.map((pizza, id) => {
+                            const src = urlFor(pizza.image).url();
+                            return (
+                                <div className={classes.pizza} key={id}>
+                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                        <div className={classes.imageWrapper}>
+                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                        </div>
+                                    </Link>
+                                    <span className={classes.name}>{pizza.name}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                </div>
+                            )
+                        }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
+                    }
+                </div> : ""}
             </div>
         </Layout>
     );
@@ -270,6 +294,8 @@ export const getServerSideProps = async () => {
     const calzone = await client.fetch(query7);
     const query8 = '*[_type == "pizza" && category in ["drinks"]]';
     const drinks = await client.fetch(query8);
+    const query9 = '*[_type == "pizza" && category in ["family"]]';
+    const familyPizza = await client.fetch(query9);
     return {
         props: {
             pizzas,
@@ -280,7 +306,8 @@ export const getServerSideProps = async () => {
             salads,
             finger,
             calzone,
-            drinks
+            drinks,
+            familyPizza
         }
     }
 }
