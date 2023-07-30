@@ -18,6 +18,8 @@ export default function Cart() {
     const removePizza = useStore((state) => state.removePizza);
     const router = useRouter();
 
+    console.log(cartData.pizzas);
+
     const handleRemove = (index) => {
         removePizza(index);
         toast.error("Item has been removed from the cart");
@@ -118,6 +120,7 @@ export default function Cart() {
                 opened={paymentMethod === 0}
                 setOpened={setPaymentMethod}
                 paymentMethod={paymentMethod}
+                orderdetails={cartData.pizzas}
             />
         </Layout>
     )

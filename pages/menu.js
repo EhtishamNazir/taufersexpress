@@ -18,7 +18,6 @@ import Salad from '../assets/salad-sm.png';
 
 export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner, salads, finger, calzone, drinks, familyPizza }) {
     const [activeTab, setActiveTab] = useState(0);
-    console.log(activeTab);
     return (
         <Layout>
             <div className={classes.container}>
