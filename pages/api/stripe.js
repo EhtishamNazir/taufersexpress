@@ -9,10 +9,12 @@ export default async function handler(req, res) {
                 payment_method_types: ['card'],
                 line_items: req.body.map((item) => {
                     const img = item.image.asset._ref;
-                    const newImage = img.replace(
-                        "image-",
-                        "https://cdn.sanity.io/images/tfz40693/production"
-                    ).replace('-jpg', '.jpg');
+                    const newImage = img
+                        .replace(
+                            "image-",
+                            "https://cdn.sanity.io/images/tfz40693/production"
+                        )
+                        .replace("-jpg", ".jpg");
 
                     return {
                         price_data: {
