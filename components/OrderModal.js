@@ -7,7 +7,7 @@ import { createOrder } from '../lib/orderHandler';
 import toast, { Toaster } from 'react-hot-toast';
 import { useStore } from '../store/store';
 
-export default function OrderModal({ opened, setOpened, paymentMethod, orderdetails }) {
+export default function OrderModal({ opened, setOpened, paymentMethod }) {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -33,7 +33,7 @@ export default function OrderModal({ opened, setOpened, paymentMethod, orderdeta
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const id = await createOrder({ ...formData, total, paymentMethod, orderdetails });
+        const id = await createOrder({ ...formData, total, paymentMethod });
         toast.success("Order Placed");
         resetCart();
         {

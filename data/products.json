@@ -1,0 +1,164 @@
+{
+    "products": [
+        {
+            "id": "p1",
+            "name": "BIG FAMILY 2 GUSTI PIZZA",
+            "category": "family",
+            "price": "23",
+            "descr": "1,5L Getränke GRATIS!",
+            "image": "/productImages/family-pizza.png"
+        },
+        {
+            "id": "p2",
+            "name": "MAXICANA - Pizza",
+            "category": "pizza",
+            "price": "10",
+            "descr": "P.M, Tonno, Mais, cipolla, salami piccante, Lombardi Origano TS. M, Thunfish, Mais, Zwieble, Sharfe Salami, Peproni, Origano",
+            "image": "/productImages/maxicana-pizza.jpg"
+        },
+        {
+            "id": "p3",
+            "name": "TIROLER SANDWICH | SANDWICH TIROLESE",
+            "category": "sandwitch",
+            "price": "10",
+            "descr": "Salsa pomodoro Mozzarella Speck Gorgonzola  TomatenSoße MuzzarellaKäse Speck Gorgonzola +TomatenSoße Gratis",
+            "image": "/productImages/sandwitch.png"
+        },
+        {
+            "id": "p4",
+            "name": "CHEESE BURGER",
+            "category": "burger",
+            "price": "6.3",
+            "descr": "Salat, Tomaten, Zwiebel, Rindfliesch und Soße + Käse Insalata, Pomodori, Cipolla, Carne di Manzo, Salsa + Formaggio",
+            "image": "/productImages/cheese-burger.png"
+        },
+        {
+            "id": "p5",
+            "name": "GEMISCHTER SALAT MIT FETA",
+            "category": "salad",
+            "price": "9",
+            "descr": "Feta, Cocktailtomaten, Gemischten Salat, Mais, Oliven",
+            "image": "/productImages/salad1.png"
+        },
+        {
+            "id": "p6",
+            "name": "CHICKEN NUGGETS - 7 PZ",
+            "category": "finger",
+            "price": "4.8",
+            "descr": "Chicken nuggets 7-pz",
+            "image": "/productImages/chicken-nuggets.png"
+        },
+        {
+            "id": "p7",
+            "name": "THUNFISCH WRAP | TONNO WRAP",
+            "category": "oriental",
+            "price": "7.5",
+            "descr": "Thunfisch, Salat, Tomaten, Zwiebel, Soßen Tonno, Insalata, Pomodori, Cipolla, Salsa",
+            "image": "/productImages/tonno-wrap.png"
+        },
+        {
+            "id": "p8",
+            "name": "CALZONE KEBAB",
+            "category": "calzone",
+            "price": "10",
+            "descr": "M. Kebab Fleisch, Fetta, Jughurt Sauce + (Tomaten Soße Gratis)",
+            "image": "/productImages/calzone-kebab.png"
+        },
+        {
+            "id": "p9",
+            "name": "DÖNERBOX FALAFEL",
+            "category": "doner",
+            "price": "8",
+            "descr": "DÖNERBOX FALAFEL",
+            "image": "/productImages/calzone-kebab.png"
+        },
+        {
+            "id": "p10",
+            "name": "DÖNERBOX FALAFEL",
+            "category": "drink",
+            "price": "8",
+            "descr": "DÖNERBOX FALAFEL",
+            "image": "/productImages/calzone-kebab.png"
+        },
+        {
+            "id": "p1",
+            "name": "BIG FAMILY 2 GUSTI PIZZA",
+            "category": "family",
+            "price": "23",
+            "descr": "1,5L Getränke GRATIS!",
+            "image": "/productImages/family-pizza.png"
+        },
+        {
+            "id": "p2",
+            "name": "MAXICANA - Pizza",
+            "category": "pizza",
+            "price": "10",
+            "descr": "P.M, Tonno, Mais, cipolla, salami piccante, Lombardi Origano TS. M, Thunfish, Mais, Zwieble, Sharfe Salami, Peproni, Origano",
+            "image": "/productImages/maxicana-pizza.jpg"
+        },
+        {
+            "id": "p3",
+            "name": "TIROLER SANDWICH | SANDWICH TIROLESE",
+            "category": "sandwitch",
+            "price": "10",
+            "descr": "Salsa pomodoro Mozzarella Speck Gorgonzola  TomatenSoße MuzzarellaKäse Speck Gorgonzola +TomatenSoße Gratis",
+            "image": "/productImages/sandwitch.png"
+        },
+        {
+            "id": "p4",
+            "name": "CHEESE BURGER",
+            "category": "burger",
+            "price": "6.3",
+            "descr": "Salat, Tomaten, Zwiebel, Rindfliesch und Soße + Käse Insalata, Pomodori, Cipolla, Carne di Manzo, Salsa + Formaggio",
+            "image": "/productImages/cheese-burger.png"
+        },
+        {
+            "id": "p5",
+            "name": "GEMISCHTER SALAT MIT FETA",
+            "category": "salad",
+            "price": "9",
+            "descr": "Feta, Cocktailtomaten, Gemischten Salat, Mais, Oliven",
+            "image": "/productImages/salad1.png"
+        },
+        {
+            "id": "p6",
+            "name": "CHICKEN NUGGETS - 7 PZ",
+            "category": "finger",
+            "price": "4.8",
+            "descr": "Chicken nuggets 7-pz",
+            "image": "/productImages/chicken-nuggets.png"
+        },
+        {
+            "id": "p7",
+            "name": "THUNFISCH WRAP | TONNO WRAP",
+            "category": "oriental",
+            "price": "7.5",
+            "descr": "Thunfisch, Salat, Tomaten, Zwiebel, Soßen Tonno, Insalata, Pomodori, Cipolla, Salsa",
+            "image": "/productImages/tonno-wrap.png"
+        },
+        {
+            "id": "p8",
+            "name": "CALZONE KEBAB",
+            "category": "calzone",
+            "price": "10",
+            "descr": "M. Kebab Fleisch, Fetta, Jughurt Sauce + (Tomaten Soße Gratis)",
+            "image": "/productImages/calzone-kebab.png"
+        },
+        {
+            "id": "p9",
+            "name": "DÖNERBOX FALAFEL",
+            "category": "doner",
+            "price": "8",
+            "descr": "DÖNERBOX FALAFEL",
+            "image": "/productImages/calzone-kebab.png"
+        },
+        {
+            "id": "p10",
+            "name": "DÖNERBOX FALAFEL",
+            "category": "drink",
+            "price": "8",
+            "descr": "DÖNERBOX FALAFEL",
+            "image": "/productImages/calzone-kebab.png"
+        }
+    ]
+}

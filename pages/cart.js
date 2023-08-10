@@ -15,6 +15,7 @@ export default function Cart() {
         typeof window !== 'undefined' && localStorage.getItem('order')
     );
     const cartData = useStore((state) => state.cart);
+    const cartDataLocalStorage = cartData.pizzas;
     const removePizza = useStore((state) => state.removePizza);
     const router = useRouter();
 
@@ -32,6 +33,7 @@ export default function Cart() {
     const handleOnDelivery = () => {
         setPaymentMethod(0);
         typeof window !== 'undefined' && localStorage.setItem('total', total());
+        typeof window !== 'undefined' && localStorage.setItem('cartData', JSON.stringify(cartDataLocalStorage));
     }
 
     const handleCheckout = async () => {
