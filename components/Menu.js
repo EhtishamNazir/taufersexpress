@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import urlFor from '../lib/client';
+// import urlFor from '../lib/client';
 import classes from '../styles/menu.module.css';
 import Pizza from '../assets/pizza.png';
 import Sandwitch from '../assets/sandwitch.png';
