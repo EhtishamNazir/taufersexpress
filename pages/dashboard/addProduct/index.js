@@ -37,13 +37,8 @@ function AddProduct() {
             if (res2.error) {
                 toast.error(res2.error);
             } else {
-                toast.success("Product saved");
-                router.push('/dashboard/addProduct');
-                setPName('');
-                setCategory('');
-                setPrice('');
-                setDetails('');
-                setMedia('');
+                toast.success("Product saved successfully");
+                router.reload();
             }
 
         } catch (err) {
