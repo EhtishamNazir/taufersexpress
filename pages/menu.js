@@ -1,23 +1,28 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { MongoClient } from 'mongodb';
+import { Cloudinary } from 'cloudinary-core';
 
-import { client } from "../lib/client";
-import urlFor from '../lib/client';
 import classes from '../styles/menuPage.module.css';
 import Layout from '../components/Layout';
-import Pizza from '../assets/pizza-sm.png';
-import Sandwitch from '../assets/sandwitch-sm.png';
-import Burger from '../assets/burger-sm.png';
-import Wrap from '../assets/wrap-sm.png';
-import Doner from '../assets/doner-sm.png';
-import Fries from '../assets/fries-sm.png';
-import Drinks from '../assets/drinks-sm.png';
-import Calzone from '../assets/calzone-sm.png';
-import Salad from '../assets/salad-sm.png';
+import Pizza from '../assets/pizza.png';
+import Sandwitch from '../assets/sandwitch.png';
+import Burger from '../assets/burger.png';
+import Wrap from '../assets/wrap.png';
+import Doner from '../assets/doner.png';
+import Fries from '../assets/fries.png';
+import Drinks from '../assets/drinks.png';
+import Calzone from '../assets/calzone.png';
+import Salad from '../assets/salad.png';
 
-export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner, salads, finger, calzone, drinks, familyPizza }) {
+export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, oriental, finger, salads, drinks, calzone, doner }) {
     const [activeTab, setActiveTab] = useState(0);
+
+    const cloudinary = new Cloudinary({
+        cloud_name: 'djtbsgzry',
+    });
+
     return (
         <Layout>
             <div className={classes.container}>
@@ -92,16 +97,15 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 0 ? <div className={classes.menu}>
                     {
                         pizzas.length > 0 ? pizzas.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -110,12 +114,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 1 ? <div className={classes.menu}>
                     {
                         sandwiches.length > 0 ? sandwiches.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -128,12 +131,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 2 ? <div className={classes.menu}>
                     {
                         burgers.length > 0 ? burgers.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -146,12 +148,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 3 ? <div className={classes.menu}>
                     {
                         oriental.length > 0 ? oriental.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -164,12 +165,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 4 ? <div className={classes.menu}>
                     {
                         doner.length > 0 ? doner.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -182,12 +182,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 5 ? <div className={classes.menu}>
                     {
                         salads.length > 0 ? salads.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -200,12 +199,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 6 ? <div className={classes.menu}>
                     {
                         finger.length > 0 ? finger.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -218,12 +216,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 7 ? <div className={classes.menu}>
                     {
                         calzone.length > 0 ? calzone.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -236,12 +233,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 8 ? <div className={classes.menu}>
                     {
                         drinks.length > 0 ? drinks.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -254,12 +250,11 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
                 {activeTab === 9 ? <div className={classes.menu}>
                     {
                         familyPizza.length > 0 ? familyPizza.map((pizza, id) => {
-                            const src = urlFor(pizza.image).url();
                             return (
                                 <div className={classes.pizza} key={id}>
-                                    <Link href={`./pizza/${pizza.slug.current}`}>
+                                    <Link href={`./pizza/${pizza._id}`}>
                                         <div className={classes.imageWrapper}>
-                                            <Image loader={() => src} src={src} alt="Pizza Image" objectFit="cover" layout="fill" />
+                                            <Image src={pizza.imageUrl} alt="Pizza Image" objectFit="cover" layout="fill" />
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
@@ -275,38 +270,34 @@ export default function FullMenu({ pizzas, sandwiches, burgers, oriental, doner,
 }
 
 export const getServerSideProps = async () => {
-    const query = '*[_type == "pizza" && category in ["pizza"]]';
-    const pizzas = await client.fetch(query);
-    const query1 = '*[_type == "pizza" && category in ["sandwiches"]]';
-    const sandwiches = await client.fetch(query1);
-    const query2 = '*[_type == "pizza" && category in ["burgers"]]';
-    const burgers = await client.fetch(query2);
-    const query3 = '*[_type == "pizza" && category in ["oriental"]]';
-    const oriental = await client.fetch(query3);
-    const query4 = '*[_type == "pizza" && category in ["doner"]]';
-    const doner = await client.fetch(query4);
-    const query5 = '*[_type == "pizza" && category in ["salads"]]';
-    const salads = await client.fetch(query5);
-    const query6 = '*[_type == "pizza" && category in ["finger"]]';
-    const finger = await client.fetch(query6);
-    const query7 = '*[_type == "pizza" && category in ["calzone"]]';
-    const calzone = await client.fetch(query7);
-    const query8 = '*[_type == "pizza" && category in ["drinks"]]';
-    const drinks = await client.fetch(query8);
-    const query9 = '*[_type == "pizza" && category in ["family"]]';
-    const familyPizza = await client.fetch(query9);
+    // Connect to MongoDB
+    const client = await MongoClient.connect(process.env.MONGODB_URI);
+    const db = client.db(process.env.MONGODB_DB);
+
+    const collection = db.collection('FoodItem');
+    const pizzas = await collection.find({ category: "pizza" }).toArray();
+    const familyPizza = await collection.find({ category: "family" }).toArray();
+    const sandwiches = await collection.find({ category: "sandwitch" }).toArray();
+    const burgers = await collection.find({ category: "burger" }).toArray();
+    const oriental = await collection.find({ category: "oriental" }).toArray();
+    const doner = await collection.find({ category: "doner" }).toArray();
+    const salads = await collection.find({ category: "salad" }).toArray();
+    const finger = await collection.find({ category: "finger" }).toArray();
+    const calzone = await collection.find({ category: "calzone" }).toArray();
+    const drinks = await collection.find({ category: "drink" }).toArray();
+
     return {
         props: {
-            pizzas,
-            sandwiches,
-            burgers,
-            oriental,
-            doner,
-            salads,
-            finger,
-            calzone,
-            drinks,
-            familyPizza
+            pizzas: JSON.parse(JSON.stringify(pizzas)),
+            sandwiches: JSON.parse(JSON.stringify(sandwiches)),
+            familyPizza: JSON.parse(JSON.stringify(familyPizza)),
+            burgers: JSON.parse(JSON.stringify(burgers)),
+            oriental: JSON.parse(JSON.stringify(oriental)),
+            doner: JSON.parse(JSON.stringify(doner)),
+            salads: JSON.parse(JSON.stringify(salads)),
+            finger: JSON.parse(JSON.stringify(finger)),
+            calzone: JSON.parse(JSON.stringify(calzone)),
+            drinks: JSON.parse(JSON.stringify(drinks)),
         }
     }
 }
