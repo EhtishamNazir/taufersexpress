@@ -6,7 +6,6 @@ import Services from "../components/Services";
 import Menu from "../components/Menu";
 import DeliveryInfo from "../components/DeliveryInfo";
 import classes from '../styles/home.module.css';
-import { client } from "../lib/client";
 
 export default function Home({ pizzas }) {
 

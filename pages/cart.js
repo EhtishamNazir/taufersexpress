@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useStore } from '../store/store';
-import urlFor from '../lib/client';
 import toast, { Toaster } from 'react-hot-toast';
 
 import Layout from '../components/Layout';

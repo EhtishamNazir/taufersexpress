@@ -1,4 +1,3 @@
-import { client } from '../../lib/client';
 
 export default async function handler(req, res) {
     switch (req.method) {

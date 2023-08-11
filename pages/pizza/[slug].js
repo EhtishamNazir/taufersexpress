@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useStore } from '../../store/store';
-import urlFor, { client } from '../../lib/client';
 
 import Layout from '../../components/Layout';
 import classes from '../../styles/pizza.module.css';

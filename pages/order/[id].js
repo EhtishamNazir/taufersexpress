@@ -1,5 +1,4 @@
 import Layout from '../../components/Layout';
-import { client } from '../../lib/client';
 import Image from 'next/image';
 
 import classes from '../../styles/order.module.css';
