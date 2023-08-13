@@ -13,6 +13,10 @@
     border-radius: 2rem;
 }
 
+.imageWrapper>img {
+    width: 80%;
+}
+
 .imageWrapper>img:hover {
     transform: scale(1.1);
     cursor: pointer;
@@ -60,13 +64,14 @@
 
 .sizeVariants>div:hover {
     background-color: var(--themeOrange);
-    color: var(--themeWhite);
+    color: var(--themeBlack);
     cursor: pointer;
 }
 
 .sizeVariants>div.selected {
     background-color: var(--themeOrange);
-    color: var(--themeWhite);
+    color: var(--themeBlack);
+    font-weight: 700;
 }
 
 .quantity {
@@ -86,6 +91,8 @@
     font-weight: normal;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    color: var(--themeBlack);
+    font-weight: 700;
 }
 
 @media screen and (max-width: 480px) {

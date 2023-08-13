@@ -7,11 +7,8 @@ import Menu from "../components/Menu";
 import DeliveryInfo from "../components/DeliveryInfo";
 import classes from '../styles/home.module.css';
 
-export default function Home({ pizzas }) {
+export default function Home() {
 
-  if (!pizzas) {
-    return <h1>Please check your internet connection</h1>
-  }
   return (
     <Layout>
       <div className={classes.container}>
@@ -27,7 +24,6 @@ export default function Home({ pizzas }) {
         <main>
           <Hero />
           <Services />
-          <Menu pizzas={pizzas} />
           <DeliveryInfo />
         </main>
       </div>
@@ -35,13 +31,4 @@ export default function Home({ pizzas }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const query = '*[_type == "pizza"]';
-  const pizzas = await client.fetch(query);
-  return {
-    props: {
-      pizzas
-    }
-  }
-}
 

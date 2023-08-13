@@ -18,8 +18,6 @@ export default function Cart() {
     const removePizza = useStore((state) => state.removePizza);
     const router = useRouter();
 
-    console.log(cartData.pizzas);
-
     const handleRemove = (index) => {
         removePizza(index);
         toast.error("Item has been removed from the cart");
@@ -73,17 +71,12 @@ export default function Cart() {
                         </thead>
                         <tbody className={classes.tbody}>
                             {cartData.pizzas.length > 0 && cartData.pizzas.map((pizza, i) => {
-                                const src = urlFor(pizza.image).url();
                                 return (
                                     <tr key={i}>
-                                        <td className={classes.imageTd}><Image loader={() => src} src={src} alt={pizza.name} objectFit='cover' width={100} height={75} /></td>
+                                        <td className={classes.imageTd}><Image src={pizza.imageUrl} alt={pizza.name} objectFit='cover' width={100} height={75} /></td>
                                         <td>{pizza.name}</td>
                                         <td>{
-                                            pizza.size === 0 ?
-                                                "Small" :
-                                                pizza.size === 1 ?
-                                                    "Medium" :
-                                                    "Large"
+                                            pizza.size
                                         }</td>
                                         <td>{pizza.price}</td>
                                         <td>{pizza.quantity}</td>

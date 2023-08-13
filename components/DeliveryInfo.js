@@ -73,7 +73,7 @@ const DeliveryInfo = () => {
                     </div>
                 </div>
                 <div className={classes.right}>
-                    <Image src={OpenImage}></Image>
+                    <Image src={OpenImage} alt=''></Image>
                 </div>
             </div>
         </div>

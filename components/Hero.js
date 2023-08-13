@@ -44,7 +44,7 @@ const Hero = () => {
                 </div>
                 <Link href={whatsappLink}>
                     <div className={classes.contactUs}>
-                        <Image src={WhatsApp} width={40} height={40} />
+                        <Image src={WhatsApp} alt="WhatsApp" width={40} height={40} />
                     </div>
                 </Link>
                 {/* <div className={classes.pizza}>

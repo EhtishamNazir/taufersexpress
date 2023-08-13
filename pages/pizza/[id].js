@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { MongoClient, ObjectId } from 'mongodb';
 import { useStore } from '../../store/store';
+import { useRouter } from 'next/router';
 
 import Layout from '../../components/Layout';
 import classes from '../../styles/pizza.module.css';
@@ -9,10 +11,12 @@ import RightArrow from '../../assets/arrowRight.png';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function Pizza({ pizza }) {
-    const [size, setSize] = useState(0);
+    const [size, setSize] = useState("Normal");
     const [quantity, setQuantity] = useState(1);
 
-    const src = urlFor(pizza.image).url();
+    console.log(pizza);
+    // console.log(params.id);
+
 
     const quantityHandler = (type) => {
         type === "incr"
@@ -25,7 +29,7 @@ export default function Pizza({ pizza }) {
     // add to cart function
     const addPizza = useStore((state) => state.addPizza);
     const addToCart = () => {
-        addPizza({ ...pizza, price: pizza.price[size], quantity: quantity, size: size });
+        addPizza({ ...pizza, price: pizza.price, quantity: quantity, size: size });
         toast.success("Added to Cart");
     }
 
@@ -33,19 +37,17 @@ export default function Pizza({ pizza }) {
         <Layout>
             <div className={classes.container}>
                 <div className={classes.imageWrapper}>
-                    <Image loader={(src) => src} src={src} alt={pizza.name} layout='fill' objectFit='cover' unoptimized />
+                    <Image src={pizza.imageUrl} alt={pizza.name} layout='fill' objectFit='cover' optimized />
                 </div>
                 {/* Right Side */}
                 <div className={classes.right}>
                     <span>{pizza.name}</span>
                     <span>{pizza.details}</span>
-                    <span><span style={{ color: 'var(--themeOrange)' }}>€ </span>{pizza.price[size]}</span>
+                    <span><span style={{ color: 'var(--themeOrange)' }}>€ </span>{pizza.price}</span>
                     <div className={classes.size}>
                         <span>Size:</span>
                         <div className={classes.sizeVariants}>
-                            {/* <div onClick={() => setSize(0)} className={size === 0 ? classes.selected : ''}>S<span>mall</span></div> */}
-                            <div onClick={() => setSize(0)} className={size === 0 ? classes.selected : ''}>Normal<span></span></div>
-                            <div onClick={() => setSize(1)} className={size === 1 ? classes.selected : ''}>Family<span></span></div>
+                            <div className={classes.selected}>N<span>ormal</span></div>
                         </div>
                     </div>
                     {/* Quantity Counter */}
@@ -68,26 +70,34 @@ export default function Pizza({ pizza }) {
     );
 }
 
-export async function getStaticProps(context) {
-    const { slug = "" } = context.params;
-    const pizza = await client.fetch(
-        `*[_type=="pizza" && slug.current == '${slug}'][0]`
-    );
+export async function getStaticProps({ params }) {
+    const pizzaId = params.id;
+    // Connect to MongoDB
+    const client = await MongoClient.connect(process.env.MONGODB_URI);
+    const db = client.db(process.env.MONGODB_DB);
+    const collection = db.collection('FoodItem');
+    const pizza = await collection.findOne({ _id: new ObjectId(pizzaId) });
 
     return {
         props: {
-            pizza
-        }
-    }
+            pizza: JSON.parse(JSON.stringify(pizza)),
+        },
+    };
 }
 
 export async function getStaticPaths() {
-    const paths = await client.fetch(
-        `*[_type=="pizza" && defined(slug.current)][].slug.current`
-    );
+    // Connect to MongoDB
+    const client = await MongoClient.connect(process.env.MONGODB_URI);
+    const db = client.db(process.env.MONGODB_DB);
+    const collection = db.collection('FoodItem');
+    const pizzas = await collection.find({}, { projection: { _id: 1 } }).toArray();
+
+    const paths = pizzas.map((pizza) => ({
+        params: { id: pizza._id.toString() },
+    }));
 
     return {
-        paths: paths.map((slug) => ({ params: { slug } })),
-        fallback: 'blocking'
-    }
+        paths,
+        fallback: false, // Or 'blocking' if you want to use incremental static regeneration
+    };
 }

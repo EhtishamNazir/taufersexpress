@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-export default async (req, res) => {
+export default AddProduct = async (req, res) => {
     switch (req.method) {
         // case "GET":
         //     await getallProducts(req, res)

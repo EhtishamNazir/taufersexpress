@@ -32,7 +32,7 @@ export default function About() {
                             <p>We provide the food which made by the fresh ingredients and things. So to give its our first priority with fresh ingredients</p>
                         </div>
                         <div className={classes.teamItem} alt='Chef'>
-                            <Image src={Chef} />
+                            <Image src={Chef} alt='Chef' />
                             <span>SEASONED CHEF</span>
                             <p>The food are made by the Chefs who earned a big name in South Tyrol with an experience of 10 years</p>
                         </div>
