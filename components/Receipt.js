@@ -35,4 +35,6 @@ export const ComponentToPrint = React.forwardRef(({ orderData, orderDetails }, r
             </div>
         </div>
     );
-}) 
+})
+
+App.displayName = 'Receipt';
