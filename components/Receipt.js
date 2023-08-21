@@ -1,4 +1,3 @@
-import React from 'react';
 import classes from '../styles/receipt.module.css';
 
 export const ComponentToPrint = React.forwardRef(({ orderData, orderDetails }, ref) => {
@@ -19,9 +18,9 @@ export const ComponentToPrint = React.forwardRef(({ orderData, orderDetails }, r
                         </tr>
                     </thead>
                     <tbody>
-                        {orderDetails.map((detail) => {
+                        {orderDetails.map((detail, index) => {
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <td>{detail.name}</td>
                                     <td>{detail.quantity}</td>
                                     <td>&euro; {detail.price}</td>
