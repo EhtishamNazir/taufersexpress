@@ -3,7 +3,7 @@ import { MongoClient } from 'mongodb';
 export default AddProduct = async (req, res) => {
     switch (req.method) {
         // case "GET":
-        //     await getallProducts(req, res)
+        //     await getOrders(req, res)
         //     break
         case "POST":
             await saveProduct(req, res)
@@ -12,10 +12,15 @@ export default AddProduct = async (req, res) => {
 }
 
 
-// const getallProducts = async (req, res) => {
+// const getOrders = async (req, res) => {
 //     try {
-//         const products = await Product.find()
-//         res.status(200).json(products)
+//         // Connect to MongoDB
+//         const client = await MongoClient.connect(process.env.MONGODB_URI);
+//         const db = client.db(process.env.MONGODB_DB);
+
+//         const collection = db.collection('Order');
+//         const orders = await collection.find({}).toArray();
+//         res.status(200).json(orders)
 //     } catch (err) {
 //         console.log(err)
 //     }
@@ -54,30 +59,3 @@ const saveProduct = async (req, res) => {
 
 }
 
-// import { MongoClient } from 'mongodb';
-
-// export default async function handler(req, res) {
-//     if (req.method === 'POST') {
-//         const { pName, category, price, details, image } = req.body;
-
-//         // Connect to MongoDB
-//         const client = await MongoClient.connect(process.env.MONGODB_URI);
-//         const db = client.db(process.env.MONGODB_DB);
-
-//         // Insert the form data into the collection
-//         await db.collection('FoodItem').insertOne({
-//             pName,
-//             category,
-//             price,
-//             details,
-//             image
-//         });
-
-//         // Close the MongoDB connection
-//         client.close();
-
-//         res.status(200).json({ message: 'Form submitted successfully!' });
-//     } else {
-//         res.status(405).json({ message: 'Method Not Allowed' });
-//     }
-// }

@@ -1,6 +1,6 @@
-import mongoose, { models } from 'mongoose'
+import mongoose from 'mongoose'
 
-const productsSchema = new mongoose.Schema({
+const foodItemSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -21,6 +21,13 @@ const productsSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+});
 
-export default mongoose.models.FoodItem || mongoose.model('FoodItem', productsSchema)
+let FoodItem;
+try {
+    FoodItem = mongoose.model('FoodItem');
+} catch {
+    FoodItem = mongoose.model('FoodItem', foodItemSchema);
+}
+
+export default FoodItem;

@@ -24,6 +24,7 @@
     width: 100%;
     padding: 10px;
     outline: none;
+    resize: none;
 }
 
 .container .file {
@@ -46,10 +47,28 @@
 
 
 .container .file input[type="file"] {
-    margin-top: 1rem;
+    display: block;
+    margin: 1rem auto 0 auto;
 }
 
 .container .submitBtn .btn {
     width: 100%;
     font-size: 1.1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+    .container {
+        width: 60%;
+    }
+
+    .container .file label {
+        display: block;
+    }
 }

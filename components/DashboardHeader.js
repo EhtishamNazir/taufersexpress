@@ -26,7 +26,7 @@ const Header = () => {
         <div className={classes.header}>
             {/* Logo Side */}
             <div className={classes.logo}>
-                <Link href='/'>
+                <Link href='/dashboard'>
                     <Image src={Logo} alt="Logo" width={150} height={50} />
                 </Link>
                 {/* <span>Fudo</span> */}

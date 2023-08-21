@@ -2,8 +2,98 @@
     width: 100%;
 }
 
-.container .sidebarMainWrapper {
+.container .receiptComponent {
+    display: none;
+    position: absolute;
+}
+
+.container .tableResponsive {
     width: 100%;
+    overflow-x: auto;
+}
+
+.container .tableResponsive table {
+    width: 90%;
+    margin: 3rem auto;
+}
+
+.container .tableResponsive table td,
+.container .tableResponsive table th {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.container .tableResponsive table .orderDetails {
+    list-style-type: none;
+}
+
+.container .tableResponsive table .orderDetails li {
+    margin-bottom: 10px;
+}
+
+.container .tableResponsive table .orderDetails li>span {
+    margin-right: 10px;
+}
+
+
+.container .tableResponsive table .statusCont span {
+    margin-right: 10px;
+}
+
+.container .tableResponsive table .changeStatusCont {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .tableResponsive table .changeStatusCont .status {
+    width: 40px;
+    padding: 7px 0;
+    text-align: center;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.container .tableResponsive table .changeStatusCont button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.container .tableResponsive table .printBtn {
+    background-color: var(--themeOrange);
+    color: var(--themeBlack);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .container .tableResponsive table td {
+        padding: 0 1rem;
+    }
+
+    .container .tableResponsive {
+        width: 90%;
+        margin: auto;
+    }
+
+    .container .tableResponsive table {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+    .container .tableResponsive {
+        width: 90%;
+        margin: auto;
+    }
+
+    .container .tableResponsive table td {
+        padding: 0 1rem;
+    }
 }

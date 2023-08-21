@@ -30,7 +30,7 @@ export default function Cart() {
     const handleOnDelivery = () => {
         setPaymentMethod(0);
         typeof window !== 'undefined' && localStorage.setItem('total', total());
-        typeof window !== 'undefined' && localStorage.setItem('cartData', JSON.stringify(cartDataLocalStorage));
+        // typeof window !== 'undefined' && localStorage.setItem('cartData', JSON.stringify(cartDataLocalStorage));
     }
 
     const handleCheckout = async () => {
@@ -114,7 +114,7 @@ export default function Cart() {
                 opened={paymentMethod === 0}
                 setOpened={setPaymentMethod}
                 paymentMethod={paymentMethod}
-                orderdetails={cartData.pizzas}
+                orderDetails={cartData.pizzas}
             />
         </Layout>
     )
