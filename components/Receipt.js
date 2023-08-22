@@ -1,3 +1,5 @@
+import React from 'react';
+
 import classes from '../styles/receipt.module.css';
 
 export const ComponentToPrint = React.forwardRef(({ orderData, orderDetails }, ref) => {
@@ -35,6 +37,6 @@ export const ComponentToPrint = React.forwardRef(({ orderData, orderDetails }, r
             </div>
         </div>
     );
-})
+});
 
-App.displayName = 'Receipt';
+

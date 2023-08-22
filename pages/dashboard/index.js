@@ -4,6 +4,7 @@ import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 import DashboardLayout from '../../components/DashboardLayout';
+import Login from '../../components/Login';
 import classes from '../../styles/dashboard.module.css';
 import RightArrow from '../../assets/right-arrow.png';
 import Image from 'next/image';
@@ -33,6 +34,10 @@ function Dashboard({ orders }) {
             toast.error("Something went wrong");
         }
     };
+
+    if (!(typeof window !== 'undefined' && localStorage.getItem('isLoggedIn'))) {
+        return <Login />
+    }
 
     return (
         <DashboardLayout>

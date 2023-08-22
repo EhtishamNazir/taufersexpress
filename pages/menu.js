@@ -122,7 +122,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -139,7 +139,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -156,7 +156,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -173,7 +173,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -190,7 +190,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -207,7 +207,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -224,7 +224,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -241,7 +241,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>
@@ -258,7 +258,7 @@ export default function FullMenu({ pizzas, sandwiches, familyPizza, burgers, ori
                                         </div>
                                     </Link>
                                     <span className={classes.name}>{pizza.name}</span>
-                                    <span className={classes.price}><span>€ </span>{pizza.price[1]}</span>
+                                    <span className={classes.price}><span>€ </span>{pizza.price}</span>
                                 </div>
                             )
                         }) : <h1 style={{ marginTop: "-2rem", fontSize: "1.5rem" }}>Item not found in this category...</h1>

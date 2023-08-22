@@ -1,6 +1,5 @@
-import React from 'react';
 import { MongoClient, ObjectId } from 'mongodb';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 
 import classes from '../../../styles/receiptPage.module.css';

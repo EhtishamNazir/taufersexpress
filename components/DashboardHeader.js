@@ -2,26 +2,27 @@ import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useStore } from "../store/store";
 import classes from '../styles/dashboardHeader.module.css';
 import Logo from '../assets/Logo-Dark.png';
-import { UilShoppingBag, UilReceipt, UilBars } from '@iconscout/react-unicons';
+import { UilBars } from '@iconscout/react-unicons';
+import { useRouter } from "next/router";
 
 
 const Header = () => {
-    const [order, setOrder] = useState("");
     const [isOpen, setIsOpen] = useState(false);
-    useEffect(() => {
-        setOrder(localStorage.getItem("order"));
-    }, []);
+    const router = useRouter();
 
     // state in terminal
-    const state = useStore((state) => state);
-    const cartItemsLength = useStore((state) => state.cart.pizzas.length);
 
     const handleMobileMenu = () => {
         setIsOpen(!isOpen);
     }
+
+    const handleLogout = () => {
+        typeof window !== 'undefined' && localStorage.removeItem('isLoggedIn')
+        router.reload();
+    }
+
     return (
         <div className={classes.header}>
             {/* Logo Side */}
@@ -37,6 +38,7 @@ const Header = () => {
                 <li><Link href="/dashboard">New Order</Link></li>
                 <li><Link href="/dashboard">Completed Orders</Link></li>
                 <li><Link href="/dashboard/addProduct">Add Product</Link></li>
+                <li><button onClick={handleLogout}>Logout</button></li>
             </div>
 
             {/* Right Side */}
