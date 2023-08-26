@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 import DashboardLayout from '../../../components/DashboardLayout';
 import classes from '../../../styles/addProduct.module.css';
-import Login from '../../components/Login';
+import Login from '../../../components/Login';
 
 function AddProduct() {
 
