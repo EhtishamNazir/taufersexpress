@@ -20,7 +20,7 @@ function Dashboard({ orders }) {
         const interval = setInterval(() => {
             // Reload the page
             location.reload();
-        }, 5000); // 5000 milliseconds = 5 seconds
+        }, 40000); // 5000 milliseconds = 5 seconds
 
         // Clean up the interval when the component is unmounted
         return () => clearInterval(interval);
