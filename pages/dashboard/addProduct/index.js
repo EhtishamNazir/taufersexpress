@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 
 import DashboardLayout from '../../../components/DashboardLayout';
 import classes from '../../../styles/addProduct.module.css';
+import Login from '../../components/Login';
 
 function AddProduct() {
 
@@ -58,6 +59,10 @@ function AddProduct() {
         })
         const res2 = await res.json()
         return res2.url
+    }
+
+    if (!(typeof window !== 'undefined' && localStorage.getItem('isLoggedIn'))) {
+        return <Login />
     }
 
     return (
