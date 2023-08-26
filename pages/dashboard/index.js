@@ -16,6 +16,15 @@ function Dashboard({ orders }) {
     const [newStatus, setNewStatus] = useState(null);
     const router = useRouter();
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            // Reload the page
+            location.reload();
+        }, 5000); // 5000 milliseconds = 5 seconds
+
+        // Clean up the interval when the component is unmounted
+        return () => clearInterval(interval);
+    }, []);
 
     const updateStatusHandler = async (id) => {
         // Update the order status in the database using an API request
@@ -38,16 +47,6 @@ function Dashboard({ orders }) {
     if (!(typeof window !== 'undefined' && localStorage.getItem('isLoggedIn'))) {
         return <Login />
     }
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            // Reload the page
-            location.reload();
-        }, 5000); // 5000 milliseconds = 5 seconds
-
-        // Clean up the interval when the component is unmounted
-        return () => clearInterval(interval);
-    }, []);
 
     return (
         <DashboardLayout>
