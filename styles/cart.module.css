@@ -75,6 +75,11 @@
     border: 2px solid var(--themeOrange);
 }
 
+.details::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
 @media screen and (max-width: 480px) {
     .container {
         display: flex;
@@ -85,11 +90,6 @@
     .details {
         width: 100%;
         overflow-x: auto;
-    }
-
-    .details::-webkit-scrollbar {
-        width: 5px;
-        height: 5px;
     }
 
     .cart {

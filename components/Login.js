@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import toast, { Toaster } from 'react-hot-toast';
 
 import classes from '../styles/login.module.css';
 
@@ -14,7 +15,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch('/api/login', {
+            const response = await fetch('https://taufersexpress.vercel.app/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,11 +28,13 @@ function Login() {
                 localStorage.setItem('isLoggedIn', true); // Store user identifier
 
                 // Redirect to dashboard
+                toast.success("Logged in successfully...");
                 router.reload('/dashboard');
             } else {
                 // Failed login
                 const data = await response.json();
                 console.log(data.message);
+                toast.error("Something went wrong");
             }
 
         } catch (error) {
@@ -61,6 +64,7 @@ function Login() {
                     <button type='submit'>Login</button>
                 </div>
             </form>
+            <Toaster />
         </div>
     )
 }

@@ -16,7 +16,6 @@
 }
 
 .menu {
-    flex: 1;
     display: flex;
     list-style: none;
     gap: 2rem;
@@ -73,6 +72,15 @@
     top: -0.2rem;
     font-size: 0.8rem;
     font-weight: 700;
+}
+
+.langChangerBtn {
+    background-color: var(--themeRed);
+    color: var(--themeWhite);
+    padding: 7px 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .toggleBtn {
@@ -165,6 +173,14 @@
         100% {
             transform: translateY(0%);
         }
+    }
+
+    .langChangerBtn {
+        display: none;
+    }
+
+    .mobileMenu>ul>li>.langChangerBtn {
+        display: block;
     }
 }
 

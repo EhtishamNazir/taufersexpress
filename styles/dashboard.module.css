@@ -72,6 +72,13 @@
     cursor: pointer;
 }
 
+.container .tableResponsive::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+
+
 @media screen and (max-width: 480px) {
     .container .tableResponsive table td {
         padding: 0 1rem;
@@ -85,6 +92,7 @@
     .container .tableResponsive table {
         width: 100%;
     }
+
 }
 
 @media screen and (max-width: 1024px) and (min-width: 481px) {

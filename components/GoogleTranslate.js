@@ -1,29 +1,32 @@
-// components/GoogleTranslate.js
-import React, { useEffect } from 'react';
+import { useEffect, useState } from "react";
+import { SelectPicker } from "rsuite";
 
 const GoogleTranslate = () => {
-    useEffect(() => {
-        // Load the Google Translate script dynamically
-        const script = document.createElement('script');
-        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        script.async = true;
-        document.body.appendChild(script);
 
-        // Clean up the script tag on unmount
-        return () => {
-            document.body.removeChild(script);
-        };
+    useEffect(() => {
+        var addScript = document.createElement('script');
+        addScript.setAttribute('src', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
+        document.body.appendChild(addScript);
+        window.googleTranslateElementInit = googleTranslateElementInit;
     }, []);
 
-    // Function called by Google Translate Widget
-    window.googleTranslateElementInit = () => {
-        new window.google.translate.TranslateElement(
-            { pageLanguage: 'en' }, // Replace 'en' with your website's default language
-            'google_translate_element'
-        );
-    };
+    const googleTranslateElementInit = () => {
 
-    return <div id="google_translate_element"></div>;
-};
+        new window.google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: "en,it,de", // include this for selected languages
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+            'google_translate_element');
+
+    }
+
+
+    return (
+        <div>
+            <div id="google_translate_element" > </div>
+        </div>
+    )
+}
 
 export default GoogleTranslate;

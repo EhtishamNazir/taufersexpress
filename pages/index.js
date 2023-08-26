@@ -3,7 +3,6 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
-import Menu from "../components/Menu";
 import DeliveryInfo from "../components/DeliveryInfo";
 import classes from '../styles/home.module.css';
 

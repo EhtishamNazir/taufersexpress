@@ -19,7 +19,8 @@ const Header = () => {
     }
 
     const handleLogout = () => {
-        typeof window !== 'undefined' && localStorage.removeItem('isLoggedIn')
+        typeof window !== 'undefined' && localStorage.removeItem('isLoggedIn');
+        setIsOpen(false);
         router.reload();
     }
 
@@ -38,7 +39,7 @@ const Header = () => {
                 <li><Link href="/dashboard">New Order</Link></li>
                 <li><Link href="/dashboard">Completed Orders</Link></li>
                 <li><Link href="/dashboard/addProduct">Add Product</Link></li>
-                <li><button onClick={handleLogout}>Logout</button></li>
+                <li><button className={classes.logoutBtn} onClick={handleLogout}>Logout</button></li>
             </div>
 
             {/* Right Side */}
@@ -53,6 +54,7 @@ const Header = () => {
                     <li onClick={() => setIsOpen(false)}><Link href="/dashboard">New Order</Link></li>
                     <li onClick={() => setIsOpen(false)}><Link href="/dashboard">Completed Orders</Link></li>
                     <li onClick={() => setIsOpen(false)}><Link href="/dashboard/addProduct">Add Product</Link></li>
+                    <li><button className={classes.logoutBtn} onClick={handleLogout}>Logout</button></li>
                 </ul>
             </div>}
         </div>
