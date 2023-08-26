@@ -20,7 +20,7 @@ function Dashboard({ orders }) {
     const updateStatusHandler = async (id) => {
         // Update the order status in the database using an API request
         try {
-            const response = await fetch(`https://taufersexpress.vercel.app/api/updateOrder/${id}`, {
+            const response = await fetch(`/api/updateOrder/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

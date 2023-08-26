@@ -20,7 +20,7 @@ function AddProduct() {
 
         try {
             const mediaUrl = await imageUpload();
-            const res = await fetch(`https://taufersexpress.vercel.app/api/addProduct`, {
+            const res = await fetch(`/api/addProduct`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
