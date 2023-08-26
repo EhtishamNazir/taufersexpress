@@ -39,6 +39,16 @@ function Dashboard({ orders }) {
         return <Login />
     }
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            // Navigate to the same page to trigger a refresh
+            router.replace(router.asPath);
+        }, 5000); // 5000 milliseconds = 5 seconds
+
+        // Clean up the interval when the component is unmounted
+        return () => clearInterval(interval);
+    }, [router]);
+
     return (
         <DashboardLayout>
             <div className={classes.container}>
