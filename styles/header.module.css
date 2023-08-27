@@ -75,12 +75,13 @@
 }
 
 .langChangerBtn {
-    background-color: var(--themeRed);
-    color: var(--themeWhite);
-    padding: 7px 15px;
+    background-color: transparent;
     border: none;
-    border-radius: 30px;
     cursor: pointer;
+}
+
+.langChangerBtn img {
+    vertical-align: middle;
 }
 
 .toggleBtn {

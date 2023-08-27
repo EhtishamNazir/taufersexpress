@@ -7,6 +7,7 @@ import classes from '../styles/header.module.css';
 import Logo from '../assets/Logo-Dark.png';
 import GoogleTranslate from './GoogleTranslate';
 import { UilShoppingBag, UilReceipt, UilBars } from '@iconscout/react-unicons';
+import Globe from '../assets/globe.png';
 
 
 const Header = () => {
@@ -69,7 +70,7 @@ const Header = () => {
                     <div className={classes.toggleBtn} onClick={handleMobileMenu}>
                         <UilBars size={32} />
                     </div>
-                    <button className={classes.langChangerBtn} onClick={() => setShowLang(!showLang)}>Language</button>
+                    <button className={classes.langChangerBtn} onClick={() => setShowLang(!showLang)}><Image src={Globe} width={32} height={32} alt="Language Selector" /></button>
                 </div>
 
                 {isOpen && <div className={classes.mobileMenu}>
@@ -81,7 +82,7 @@ const Header = () => {
                         <li><button className={classes.langChangerBtn} onClick={() => {
                             setShowLang(!showLang);
                             setIsOpen(false)
-                        }}>Language</button></li>
+                        }}><Image src={Globe} width={32} height={32} alt="Language Selector" /></button></li>
                     </ul>
                 </div>}
             </div>
