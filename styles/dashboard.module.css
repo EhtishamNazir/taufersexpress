@@ -82,7 +82,6 @@
 @media screen and (max-width: 480px) {
     .container .tableResponsive table th {
         min-width: 120px;
-        border: 1px solid white;
     }
 
     .container .tableResponsive table th:nth-child(7) {
