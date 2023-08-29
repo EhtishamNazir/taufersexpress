@@ -23,6 +23,19 @@
     font-size: 1.2rem;
 }
 
+.container .tableResponsive table td {
+    padding: 0.5rem 1rem;
+}
+
+.container .tableResponsive table td:nth-child(3),
+.container .tableResponsive table td:nth-child(8) {
+    max-width: 200px;
+}
+
+.container .tableResponsive table td:nth-child(8) {
+    text-align: left;
+}
+
 .container .tableResponsive table .orderDetails {
     list-style-type: none;
 }
@@ -80,17 +93,33 @@
 
 
 @media screen and (max-width: 480px) {
+    .container .tableResponsive table {
+        margin-bottom: 1rem;
+    }
+
     .container .tableResponsive table th {
         min-width: 120px;
     }
 
     .container .tableResponsive table th:nth-child(7) {
-        min-width: 150px;
+        min-width: 120px;
     }
 
     .container .tableResponsive table td {
-        padding: 0 1.5rem;
-        border: 1px solid white;
+        min-width: 150px;
+    }
+
+    .container .tableResponsive table td:nth-child(1) {
+        min-width: 150px;
+    }
+
+    .container .tableResponsive table td:nth-child(3) {
+        min-width: 200px;
+    }
+
+    .container .tableResponsive table td:nth-child(8) {
+        min-width: 200px;
+        text-align: center;
     }
 
     .container .tableResponsive {
