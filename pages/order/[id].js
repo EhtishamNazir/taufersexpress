@@ -17,6 +17,7 @@ export default function Orders({ order }) {
             localStorage.clear();
         }
     }, [order]);
+
     return (
         <Layout>
             <div className={classes.container}>

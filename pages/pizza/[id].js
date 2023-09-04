@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { MongoClient, ObjectId } from 'mongodb';
 import { useStore } from '../../store/store';
-import { useRouter } from 'next/router';
 
 import Layout from '../../components/Layout';
 import classes from '../../styles/pizza.module.css';
@@ -13,10 +12,6 @@ import toast, { Toaster } from 'react-hot-toast';
 export default function Pizza({ pizza }) {
     const [size, setSize] = useState("Normal");
     const [quantity, setQuantity] = useState(1);
-
-    console.log(pizza);
-    // console.log(params.id);
-
 
     const quantityHandler = (type) => {
         type === "incr"
