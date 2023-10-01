@@ -87,11 +87,8 @@ function Dashboard({ orders }) {
                                         </td>
                                         <td>
                                             <ul className={classes.orderDetails}>
-                                                {order.orderDetails.map((order, orderIndex) => (
-                                                    <li key={orderIndex}>
-                                                        <span>{order.name}</span>({order.quantity})
-                                                    </li>
-                                                ))}
+                                            Details
+                                                {/* {orders.orderDetails} */}
                                             </ul>
                                         </td>
                                         <td>
