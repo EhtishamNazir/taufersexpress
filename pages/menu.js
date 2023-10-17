@@ -286,6 +286,8 @@ export const getServerSideProps = async () => {
     const calzone = await collection.find({ category: "calzone" }).toArray();
     const drinks = await collection.find({ category: "drink" }).toArray();
 
+    client.close();
+
     return {
         props: {
             pizzas: JSON.parse(JSON.stringify(pizzas)),

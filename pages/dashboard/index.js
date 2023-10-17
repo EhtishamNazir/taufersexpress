@@ -87,11 +87,11 @@ function Dashboard({ orders }) {
                                         </td>
                                         <td>
                                             <ul className={classes.orderDetails}>
-                                                {order.orderDetails.map((order, orderIndex) => (
+                                                {order.orderDetails ? order.orderDetails.map((order, orderIndex) => (
                                                     <li key={orderIndex}>
                                                         <span>{order.name}</span>({order.quantity})
                                                     </li>
-                                                ))}
+                                                )) : <li>Nothin in order details</li>}
                                             </ul>
                                         </td>
                                         <td>
@@ -119,6 +119,8 @@ export const getServerSideProps = async () => {
     const collection = db.collection('Order');
     const orders = await collection.find({ orderStatus: { $lte: 3 } }).sort({ '_id': -1 }).toArray();
 
+    client.close();
+    
     return {
         props: {
             orders: JSON.parse(JSON.stringify(orders)),

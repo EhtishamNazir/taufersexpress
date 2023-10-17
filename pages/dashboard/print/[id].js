@@ -29,6 +29,8 @@ export async function getStaticProps({ params }) {
     const collection = db.collection('Order');
     const order = await collection.findOne({ _id: new ObjectId(orderId) });
 
+    client.close();
+
     return {
         props: {
             order: JSON.parse(JSON.stringify(order)),
@@ -46,6 +48,8 @@ export async function getStaticPaths() {
     const paths = orders.map((order) => ({
         params: { id: order._id.toString() },
     }));
+
+    client.close();
 
     return {
         paths,

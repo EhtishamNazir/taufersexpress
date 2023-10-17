@@ -32,6 +32,8 @@ export default async function handler(req, res) {
                 console.log(error);
                 res.status(500).json({ msg: "Error, check console." });
             }
+
+            client.close();
             break;
     }
 }

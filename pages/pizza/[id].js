@@ -73,6 +73,8 @@ export async function getStaticProps({ params }) {
     const collection = db.collection('FoodItem');
     const pizza = await collection.findOne({ _id: new ObjectId(pizzaId) });
 
+    client.close();
+
     return {
         props: {
             pizza: JSON.parse(JSON.stringify(pizza)),
@@ -90,6 +92,8 @@ export async function getStaticPaths() {
     const paths = pizzas.map((pizza) => ({
         params: { id: pizza._id.toString() },
     }));
+
+    client.close();
 
     return {
         paths,
