@@ -38,6 +38,7 @@ const Header = () => {
             <div className={classes.menu}>
                 <li><Link href="/dashboard">New Order</Link></li>
                 <li><Link href="/dashboard">Completed Orders</Link></li>
+                <li><Link href="/dashboard/products">View Products</Link></li>
                 <li><Link href="/dashboard/addProduct">Add Product</Link></li>
                 <li><button className={classes.logoutBtn} onClick={handleLogout}>Logout</button></li>
             </div>
@@ -53,6 +54,7 @@ const Header = () => {
                 <ul>
                     <li onClick={() => setIsOpen(false)}><Link href="/dashboard">New Order</Link></li>
                     <li onClick={() => setIsOpen(false)}><Link href="/dashboard">Completed Orders</Link></li>
+                    <li onClick={() => setIsOpen(false)}><Link href="/dashboard/products">View Products</Link></li>
                     <li onClick={() => setIsOpen(false)}><Link href="/dashboard/addProduct">Add Product</Link></li>
                     <li><button className={classes.logoutBtn} onClick={handleLogout}>Logout</button></li>
                 </ul>
