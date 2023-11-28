@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import { sendMail } from "../../lib/mailService";
 
 export default async function handler(req, res) {
     switch (req.method) {
@@ -20,10 +21,20 @@ export default async function handler(req, res) {
                     totalAmount: newOrder.total,
                     orderStatus: newOrder.status,
                     paymentMethod: newOrder.method,
+                    orderDate: newOrder.orderDate,
                     orderDetails: newOrder.orderDetails,
                 });
 
+                const message = `<h1 style="text-align: center">You have a new order from ${newOrder.name}</h1> <h3>Order details are:</h3><p><b>Customer phone number:</b> ${newOrder.phone}</p>`;
+
+
+                await sendMail(
+                    "Order Update",
+                    "waqarmanzoor.wm@gmail.com",
+                    message
+                );
                 res.status(201).json(order)
+
             } catch (error) {
                 console.log(error);
                 res.status(500).json({ msg: "Error, check console." });

@@ -13,23 +13,23 @@ import Link from 'next/link';
 
 function Products({ products }) {
 
-    const [newStatus, setNewStatus] = useState(null);
     const router = useRouter();
 
-    const updateStatusHandler = async (id) => {
+    const deleteProductHandler = async (id) => {
         // Update the order status in the database using an API request
         try {
-            const response = await fetch(`/api/updateOrder/${id}`, {
-                method: 'PUT',
+            const response = await fetch(`/api/deleteProduct/${id}`, {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: newStatus,
             });
-            toast.success("Order Status has been updated successfully...");
-            router.reload();
+            if (response) {
+                toast.success("Product has been deleted successfully...");
+                router.reload();
+            }
         } catch (error) {
-            console.error('Error updating order status:', error);
+            console.error('Error deleting product:', error);
             toast.error("Something went wrong");
         }
     };
@@ -60,7 +60,7 @@ function Products({ products }) {
                                         <td>{product.category}</td>
                                         <td>&euro; {product.price}</td>
                                         <td><Image src={product.imageUrl} alt='' width={100} height={70} /> </td>
-                                        <td><Link href={`/dashboard/products/editProduct/${product._id}`}><span className={classes.editBtn}>Edit</span></Link> <Link href='/'><span className={classes.deleteBtn}>Delete</span></Link></td>
+                                        <td><Link href={`/dashboard/products/editProduct/${product._id}`}><span className={classes.editBtn}>Edit</span></Link> <button type='button' onClick={deleteProductHandler(product._id)}><span className={classes.deleteBtn}>Delete</span></button></td>
                                     </tr>
                                 )
                             })}
@@ -84,7 +84,7 @@ export const getServerSideProps = async () => {
     const products = await collection.find({}).toArray();
 
     client.close();
-    
+
     return {
         props: {
             products: JSON.parse(JSON.stringify(products)),

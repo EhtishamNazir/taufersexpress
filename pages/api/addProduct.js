@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-export default AddProduct = async (req, res) => {
+const AddProduct = async (req, res) => {
     switch (req.method) {
         // case "GET":
         //     await getOrders(req, res)
@@ -10,6 +10,9 @@ export default AddProduct = async (req, res) => {
             break
     }
 }
+
+
+export default AddProduct;
 
 
 // const getOrders = async (req, res) => {
@@ -55,7 +58,5 @@ const saveProduct = async (req, res) => {
         res.status(500).json({ error: "internal server error" })
         console.log(err)
     }
-
-
 }
 

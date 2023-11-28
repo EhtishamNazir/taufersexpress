@@ -5,6 +5,8 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import DeliveryInfo from "../components/DeliveryInfo";
 import classes from '../styles/home.module.css';
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Home() {
 
@@ -19,13 +21,13 @@ export default function Home() {
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="manifest" href="/site.webmanifest"></link>
         </Head>
-        {/* body */}
         <main>
           <Hero />
           <Services />
           <DeliveryInfo />
         </main>
       </div>
+      <Toaster />
     </Layout>
   );
 }

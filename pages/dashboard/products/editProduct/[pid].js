@@ -22,14 +22,17 @@ export default function Product({ product }) {
         // Update the order status in the database using an API request
         try {
             const response = await fetch(`/api/editProduct/${id}`, {
-                method: 'PUT',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: price,
-            });
-            toast.success("Product has been updated successfully...");
-            router.push('/dashboard/products');
+            })
+            if(response){
+                toast.success("Product has been updated successfully...");
+                router.push('/dashboard/products');
+            }
+            
         } catch (error) {
             console.error('Error updating order status:', error);
             toast.error("Something went wrong");
@@ -46,8 +49,8 @@ export default function Product({ product }) {
                     {/* <div className={classes.group}>
                         <label>Product Name</label>
                         <input type='text' className={classes.groupInput} onChange={(e) => setPName(e.target.value)} value={product.name} required />
-                    </div> */}
-                    {/* <div className={classes.group}>
+                    </div>
+                    <div className={classes.group}>
                         <label>Product Category</label>
                         <select className={classes.groupInput} onChange={(e) => setCategory(e.target.value)} required>
                             <option value=''>Select Category</option>
@@ -79,7 +82,7 @@ export default function Product({ product }) {
                         </label>
                     </div> */}
                     <div className={classes.submitBtn}>
-                        <button className={`btn ${classes.btn}`} onClick={() => updateProductHandler(product._id)} >Update Product</button>
+                        <button type='button' className={`btn ${classes.btn}`} onClick={() => updateProductHandler(product._id)} >Update Product</button>
                     </div>
                 </form>
             </div>

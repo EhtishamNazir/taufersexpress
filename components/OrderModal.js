@@ -11,7 +11,7 @@ export default function OrderModal({ opened, setOpened, paymentMethod, orderDeta
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
-        address: '',
+        address: ''
     });
     const theme = useMantineTheme();
     const resetCart = useStore((state) => state.resetCart);
@@ -32,16 +32,18 @@ export default function OrderModal({ opened, setOpened, paymentMethod, orderDeta
     }
 
     const handleSubmit = async (e) => {
+        const orderDate = new Date();
         e.preventDefault();
-        const id = await createOrder({ ...formData, total, paymentMethod, orderDetails });
+        const id = await createOrder({ ...formData, total, paymentMethod, orderDetails, orderDate });
         toast.success("Order Placed");
         resetCart();
-        console.log(id);
         {
             typeof window !== 'undefined' && localStorage.setItem('order', id.insertedId);
         }
 
-        router.push(`/order/${id.insertedId}`);
+        if(id){
+            router.push(`/order/${id.insertedId}`);
+        }
     }
 
     return (

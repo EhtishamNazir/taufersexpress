@@ -62,6 +62,7 @@ function Dashboard({ orders }) {
                                 <th>Payment</th>
                                 <th>Status</th>
                                 <th>Change Status</th>
+                                <th>Date</th>
                                 <th>Details</th>
                                 <th>Actions</th>
                             </tr>
@@ -85,13 +86,14 @@ function Dashboard({ orders }) {
                                                 <button onClick={() => updateStatusHandler(order._id)}><Image src={RightArrow} alt='Arrow' width={30} height={30} /></button>
                                             </div>
                                         </td>
+                                        <td style={{width: '150px', textAlign: 'center'}}>{order.orderDate.slice(0, 10)}</td>
                                         <td>
                                             <ul className={classes.orderDetails}>
                                                 {order.orderDetails ? order.orderDetails.map((order, orderIndex) => (
                                                     <li key={orderIndex}>
                                                         <span>{order.name}</span>({order.quantity})
                                                     </li>
-                                                )) : <li>Nothin in order details</li>}
+                                                )) : <li>Nothing in order details</li>}
                                             </ul>
                                         </td>
                                         <td>

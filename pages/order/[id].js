@@ -14,7 +14,8 @@ export default function Orders({ order }) {
 
     useEffect(() => {
         if (order.orderStatus > 3) {
-            localStorage.clear();
+            typeof window !== 'undefined' && localStorage.removeItem('total');
+            typeof window !== 'undefined' && localStorage.removeItem('order');
         }
     }, [order]);
 

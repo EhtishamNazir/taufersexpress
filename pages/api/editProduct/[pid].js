@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     switch (req.method) {
 
-        case "PUT":
+        case "POST":
             const newPrice = await req.body;
 
             // Connect to MongoDB
@@ -19,14 +19,14 @@ export default async function handler(req, res) {
                     return res.status(422).json({ error: "Fill the status field" });
                 }
 
-                // else if (newStatus === 1) {
-                //     return res.status(422).json({ error: "Status is already 1 choose another value" });
-                // }
+                else if (newPrice === 0) {
+                    return res.status(422).json({ error: "Status is already 1 choose another value" });
+                }
 
                 else {
-                    const updatedProduct= await db.collection('FoodItem').updateOne({ _id: new ObjectId(productId) }, { $set: { price: newPrice } })
+                    const updatedProduct= await db.collection('FoodItem').updateOne({ _id: new ObjectId(productId) }, { $set: { price: newPrice } });
 
-                    res.status(201).json(updatedProduct)
+                    res.status(201).json(updatedProduct);
                 }
             } catch (error) {
                 console.log(error);

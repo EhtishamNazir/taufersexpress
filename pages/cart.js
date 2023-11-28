@@ -27,7 +27,9 @@ export default function Cart() {
         return cartData.pizzas.reduce((a, b) => a + b.quantity * b.price, 0);
     }
 
+
     const handleOnDelivery = () => {
+        const orderDate = new Date();
         setPaymentMethod(0);
         typeof window !== 'undefined' && localStorage.setItem('total', total());
         // typeof window !== 'undefined' && localStorage.setItem('cartData', JSON.stringify(cartDataLocalStorage));

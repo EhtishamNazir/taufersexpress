@@ -39,7 +39,7 @@ function AddProduct() {
                 toast.error(res2.error);
             } else {
                 toast.success("Product saved successfully");
-                router.reload();
+                router.push('/dashboard/products');
             }
 
         } catch (err) {
