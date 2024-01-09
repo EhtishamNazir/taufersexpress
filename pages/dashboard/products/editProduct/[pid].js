@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function Product({ product }) {
- 
+
     const [pName, setPName] = useState('');
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState('');
@@ -28,11 +28,11 @@ export default function Product({ product }) {
                 },
                 body: price,
             })
-            if(response){
+            if (response) {
                 toast.success("Product has been updated successfully...");
                 router.push('/dashboard/products');
             }
-            
+
         } catch (error) {
             console.error('Error updating order status:', error);
             toast.error("Something went wrong");

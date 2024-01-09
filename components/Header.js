@@ -55,7 +55,7 @@ const Header = () => {
                             <div className={classes.badge}>{cartItemsLength}</div>
                         </div>
                     </Link>
-                    {
+                    {/* {
                         order && (
                             <Link href={`/order/${order}`}>
                                 <div className={classes.cart}>
@@ -66,7 +66,7 @@ const Header = () => {
                                 </div>
                             </Link>
                         )
-                    }
+                    } */}
                     <div className={classes.toggleBtn} onClick={handleMobileMenu}>
                         <UilBars size={32} />
                     </div>

@@ -10,7 +10,6 @@ import classes from '../../../styles/products.module.css';
 import Link from 'next/link';
 
 
-
 function Products({ products }) {
 
     const router = useRouter();
@@ -23,13 +22,14 @@ function Products({ products }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-            });
+            })
             if (response) {
                 toast.success("Product has been deleted successfully...");
-                router.reload();
+                router.push('/dashboard/products');
             }
+
         } catch (error) {
-            console.error('Error deleting product:', error);
+            console.error('Error updating order status:', error);
             toast.error("Something went wrong");
         }
     };
@@ -60,7 +60,10 @@ function Products({ products }) {
                                         <td>{product.category}</td>
                                         <td>&euro; {product.price}</td>
                                         <td><Image src={product.imageUrl} alt='' width={100} height={70} /> </td>
-                                        <td><Link href={`/dashboard/products/editProduct/${product._id}`}><span className={classes.editBtn}>Edit</span></Link> <button type='button' onClick={deleteProductHandler(product._id)}><span className={classes.deleteBtn}>Delete</span></button></td>
+                                        <td className={classes.editDelete}>
+                                            <Link href={`/dashboard/products/editProduct/${product._id}`}><span className={classes.editBtn}>Edit</span></Link>
+                                            <button type='button' className={classes.deleteBtn} onClick={() => deleteProductHandler(product._id)} >Delete</button>
+                                        </td>
                                     </tr>
                                 )
                             })}

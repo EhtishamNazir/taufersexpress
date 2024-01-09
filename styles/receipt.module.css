@@ -1,6 +1,6 @@
 .receipt {
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: #ffffff;
     color: var(--themeBlack);
     padding-top: 50px;
@@ -44,11 +44,17 @@
 @media print {
     .receipt {
         font-size: 14px;
+        padding-top: 20px;
         /* Other print styles */
     }
 
+    .receipt .receiptData table td:nth-child(1) {
+        width: 100px;
+    }
+
     .receipt .receiptData {
-        width: 70%;
+        width: 25%;
+        padding: 20px;
         height: max-content;
     }
 }

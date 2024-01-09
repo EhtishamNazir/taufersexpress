@@ -10,6 +10,7 @@ import { useStore } from '../store/store';
 export default function OrderModal({ opened, setOpened, paymentMethod, orderDetails }) {
     const [formData, setFormData] = useState({
         name: '',
+        email: '',
         phone: '',
         address: ''
     });
@@ -21,6 +22,10 @@ export default function OrderModal({ opened, setOpened, paymentMethod, orderDeta
 
     const handleNameInput = (e) => {
         setFormData({ ...formData, name: e.target.value });
+    }
+
+    const handleEmailInput = (e) => {
+        setFormData({ ...formData, email: e.target.value });
     }
 
     const handlePhoneInput = (e) => {
@@ -41,8 +46,10 @@ export default function OrderModal({ opened, setOpened, paymentMethod, orderDeta
             typeof window !== 'undefined' && localStorage.setItem('order', id.insertedId);
         }
 
-        if(id){
-            router.push(`/order/${id.insertedId}`);
+        if (id) {
+            router.push('/');
+        } else {
+            alert('Id not found');
         }
     }
 
@@ -61,6 +68,7 @@ export default function OrderModal({ opened, setOpened, paymentMethod, orderDeta
                 {/* Modal content */}
                 <form className={classes.formContainer} onSubmit={handleSubmit}>
                     <input type='text' name='name' placeholder='Name' onChange={handleNameInput} required />
+                    <input type='email' name='email' placeholder='Email' onChange={handleEmailInput} required />
                     <input type='text' name='phone' placeholder='Phone Number' onChange={handlePhoneInput} required />
                     <textarea name='address' cols={8} rows={3} placeholder='Address' onChange={handleAddressInput} required></textarea>
                     <span>

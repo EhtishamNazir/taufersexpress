@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -86,7 +87,7 @@ function Dashboard({ orders }) {
                                                 <button onClick={() => updateStatusHandler(order._id)}><Image src={RightArrow} alt='Arrow' width={30} height={30} /></button>
                                             </div>
                                         </td>
-                                        <td style={{width: '150px', textAlign: 'center'}}>{order.orderDate.slice(0, 10)}</td>
+                                        <td style={{ width: '150px', textAlign: 'center' }}>{order.orderDate.slice(0, 10)}</td>
                                         <td>
                                             <ul className={classes.orderDetails}>
                                                 {order.orderDetails ? order.orderDetails.map((order, orderIndex) => (
@@ -97,7 +98,7 @@ function Dashboard({ orders }) {
                                             </ul>
                                         </td>
                                         <td>
-                                            <a href={`/dashboard/print/${order._id}`} target="_blank" className={classes.printBtn}>Print</a>
+                                            <Link href={`/dashboard/print/${order._id}`} className={classes.printBtn}>Print</Link>
                                         </td>
                                     </tr>
                                 )
@@ -122,7 +123,7 @@ export const getServerSideProps = async () => {
     const orders = await collection.find({ orderStatus: { $lte: 3 } }).sort({ '_id': -1 }).toArray();
 
     client.close();
-    
+
     return {
         props: {
             orders: JSON.parse(JSON.stringify(orders)),

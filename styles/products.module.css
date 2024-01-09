@@ -21,12 +21,20 @@
 .container .tableResponsive table td {
     padding: 0.5rem 1rem;
 }
+
 .container .tableResponsive table td:nth-child(1) {
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .container .tableResponsive table .orderDetails {
     list-style-type: none;
+}
+
+.container .tableResponsive table td.editDelete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
 }
 
 .container .tableResponsive table .editBtn,
@@ -39,10 +47,12 @@
     font-weight: 700;
     cursor: pointer;
 }
-.container .tableResponsive table .deleteBtn{
+
+.container .tableResponsive table .deleteBtn {
     background-color: var(--themeRed);
     color: var(--themeWhite);
     margin-left: 10px;
+    padding: 11px 10px;
 }
 
 .container .tableResponsive::-webkit-scrollbar {
@@ -66,7 +76,8 @@
     .container .tableResponsive table td:nth-child(3) {
         min-width: 100px;
     }
-    .container .tableResponsive table td:nth-child(2){
+
+    .container .tableResponsive table td:nth-child(2) {
         width: 120px;
     }
 
@@ -81,9 +92,11 @@
         width: 90%;
         margin: auto;
     }
-    .container .tableResponsive table{
+
+    .container .tableResponsive table {
         width: 100%;
     }
+
     .container .tableResponsive table td {
         padding: 0 1rem;
     }

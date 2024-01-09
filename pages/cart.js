@@ -51,7 +51,7 @@ export default function Cart() {
 
         const data = await response.json();
         toast.loading("Redirecting...");
-        router.push(data.url);
+        router.push('/');
     }
 
     return (
@@ -103,12 +103,12 @@ export default function Cart() {
                             <span><span style={{ color: 'var(--themeOrange)' }}>€ </span>{total()}</span>
                         </div>
                     </div>
-                    {!order && cartData.pizzas.length > 0 ? (
-                        <div className={classes.buttons}>
-                            <button className='btn' onClick={handleOnDelivery}>Pay on Delivery</button>
-                            <button className='btn' onClick={handleCheckout}>Pay Now</button>
-                        </div>
-                    ) : null}
+                    {/* {!order && cartData.pizzas.length > 0 ? ( */}
+                    <div className={classes.buttons}>
+                        <button className='btn' onClick={handleOnDelivery}>Pay on Delivery</button>
+                        <button className='btn' onClick={handleCheckout}>Pay Now</button>
+                    </div>
+                    {/* ) : null} */}
                 </div>
             </div>
             <Toaster />
